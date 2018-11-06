@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 class Map extends Component {
 render () {
 return (
@@ -7,12 +8,12 @@ return (
  <div id="map"></div> 
     
      
-      {/*} var dailyBuzz= {lat: 44.5143, lng: -88.0166}
-       var marker= new google.maps.Marker({
-        position: dailyBuzz,
+     {/* var dailyBuzz= new maps.LatLng{44.5143, -88.0166}
+       
+        var position= new maps.Marker {dailyBuzz},
         map: map,
         title: "Daily Buzz Espresso Bar"
-       })
+      
        var infoWindow = new google.maps.InfoWindow ({
         content: "Daily Buzz Espresso Bar"
         //content: "124 E Walnut St Apt 124"
