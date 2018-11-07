@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
 import Map from './components/Map'
-import './location.json'
+import locationData from './location.json'
 import './App.css'
 import axios from 'axios'
 import GoogleMapReact from 'google-map-react'
