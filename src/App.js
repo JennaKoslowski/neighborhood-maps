@@ -24,17 +24,6 @@ renderMap=()=>{
 	window.initMap = this.initMap
 }
 
-//foursquare= ()=>{
-//	let foursquareAPI="https://api.foursquare.com/v2/venues/VENUE_ID"
-//	let foursquareInfo= {
-//		near: Green Bay
-//		selection: coffee
-//		limit: 10
-//		radius: 16093.4 //10 miles	
-//	} 
-//}
-
-
   render() {
     return (
     	<main>
