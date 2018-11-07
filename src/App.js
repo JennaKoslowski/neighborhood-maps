@@ -27,6 +27,7 @@ renderMap=()=>{
   render() {
     return (
     	<main>
+    	<h1>Coffee in Green Bay, WI</h1>
        <Map role= "application"
        aria-label = "map"/> 
       
