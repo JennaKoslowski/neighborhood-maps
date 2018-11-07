@@ -1,16 +1,29 @@
 
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Map from './components/Map'
-
-import './App.css';
+import './location.json'
+import './App.css'
+import axios from 'axios'
 
 
 class App extends Component {
 
+state = {
+	markers: [],
+	locations: []
+}
+
 componentDidMount() {
 	this.renderMap()
-
 }
+componetWillMount(){
+	axios.get(window.location.json)
+.then(response => {
+	this.setState({markers: response.data});
+}).catch(function(error){
+	console.log(error);
+})}
+
 
 initMap=()=> {
    let map= new window.google.maps.Map(document.getElementById('map'), {
@@ -24,12 +37,13 @@ renderMap=()=>{
 	window.initMap = this.initMap
 }
 
+
   render() {
     return (
     	<main>
     	<h1>Coffee in Green Bay, WI</h1>
        <Map role= "application"
-       aria-label = "map"/> 
+       aria-label = "map" />
       
        </main>
     );
