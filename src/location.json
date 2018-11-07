@@ -1,13 +1,12 @@
-{ "location":[
+{ "locations": [
 	{
 		"name": "Daily Buzz",
 		"address": "124 E Walnut St APt 124",
 		"city": "Green Bay",
 		"state": "Wisconsin" ,
 		"website": "http://www.dailybuzzgb.com/",
-		"latitude": "44.5165", 
-		"longitude": "-88.0155",
-		"specialty": "bakery items",
+		"latLong": {"lat":44.5165 , "lng": -88.0155 },
+		"specialty": "bakery items"
 	},
 	{
 		"name": "Kavarna",
@@ -15,9 +14,8 @@
 		"city": "Green Bay",
 		"state": "Wisconsin",
 		"website": "https://kavarna.com/",
-		"latitude":"44.5175",
-		"longitude": "-88.0214",
-		"specialty": "hummus and vegetarian options",
+		"latLong": {"lat":44.5175 , "lng": -88.0214 },
+		"specialty": "hummus and vegetarian options"
 	},
 	{
 		"name": "The Attic",
@@ -25,9 +23,8 @@
 		"city": "Green Bay",
 		"state": "Wisconsin",
 		"website": "https://theatticcorner.com/",
-		"latitude": "44.5142",
-		"longitude": "-88.0059" ,
-		"specialty": "seasonal cider and teas" ,
+		"latLong": {"lat":44.5142 , "lng": -88.0059 },
+		"specialty": "seasonal cider and teas"
 	},
 	{
 		"name": "Copper Rock Coffee Company",
@@ -35,9 +32,8 @@
 		"city": "Green Bay",
 		"state": "Wisconsin",
 		"website": "https://www.copperrockcoffee.com/",
-		"latitude": "44.2620",
-		"longitude": "-88.4079" ,
-		"specialty": "in-house roasting",
+		"latLong": {"lat":44.2620 , "lng": -88.4079 },
+		"specialty": "in-house roasting"
 	},
 	{
 		"name": "The Creamery",
@@ -45,8 +41,7 @@
 		"city": "Green Bay",
 		"state": "Wisconsin",
 		"website": "https://www.thecreamerycafe.com/",
-		"latitude": "44.5165", 
-		"longitude":"-88.0155",
-		"specialty": "cakes and pastries",
-	},]
+		"latLong": {"lat":44.5165 , "lng": -88.0155 },
+		"specialty": "cakes and pastries"
+	}]
 }

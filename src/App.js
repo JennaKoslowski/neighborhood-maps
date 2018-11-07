@@ -15,6 +15,7 @@ state = {
 
 componentDidMount() {
 	this.renderMap()
+	this.createMarkers()
 }
 componetWillMount(){
 	axios.get(window.location.json)
@@ -22,7 +23,8 @@ componetWillMount(){
 	this.setState({markers: response.data});
 }).catch(function(error){
 	console.log(error);
-})}
+})
+}
 
 
 initMap=()=> {
@@ -37,6 +39,11 @@ renderMap=()=>{
 	window.initMap = this.initMap
 }
 
+createMarkers = () => {
+    let marker= new window.google.maps.Marker({
+      position: {lat: window.location.latLong}
+    }); this.state.markers.push(this.marker);
+  }
 
   render() {
     return (
