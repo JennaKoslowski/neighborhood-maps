@@ -1,4 +1,4 @@
-import axios from 'axios'
+
 import React, { Component } from 'react';
 import Map from './components/Map'
 
@@ -7,13 +7,9 @@ import './App.css';
 
 class App extends Component {
 
-	state= {
-		foursquareInfo:[]	
-	}
-
 componentDidMount() {
 	this.renderMap()
-	this.renderFoursquare()
+
 }
 
 initMap=()=> {
@@ -38,32 +34,12 @@ renderMap=()=>{
 //	} 
 //}
 
-renderFoursquare = () => {
-	let endpoint= "https://api.foursquare.com/v2/venues/explore"
-	let foursquareInfo= { // missing access credentials
-		client_id: "W3ASN51V10YRM0MLD0NB54OUTTUC2CC3T00BWAD5TY03JDL1",
-		client_secret: "GFF43GINHHSVQCHM3AMF2QBKY4CDV2DUZXPIHXGG1GPFM3LB",
-		near: "Green Bay",
-		selection: "coffee",
-		limit: 10,
-		radius: 16093.4,
-		v: "20181106"
-	}
-	axios.get(endpoint
-		+ new URLSearchParams(foursquareInfo))
-	.then(res => {
-		 this.setState({foursquareInfo});
-		 console.log(res)
-	}).catch(error=> {
-		console.log(error.response)
-	}) 
-}
 
   render() {
     return (
     	<main>
        <Map /> 
-       console.log({this.foursquareInfo});
+      
        </main>
     );
   }
