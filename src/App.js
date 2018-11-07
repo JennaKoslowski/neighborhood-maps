@@ -27,7 +27,8 @@ renderMap=()=>{
   render() {
     return (
     	<main>
-       <Map /> 
+       <Map role= "application"
+       aria-label = "map"/> 
       
        </main>
     );
