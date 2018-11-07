@@ -4,6 +4,7 @@ import Map from './components/Map'
 import './location.json'
 import './App.css'
 import axios from 'axios'
+import GoogleMapReact from 'google-map-react'
 
 
 class App extends Component {
