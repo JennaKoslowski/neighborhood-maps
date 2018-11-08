@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
-import locationData from '../data/location.json'
+//import React, {Component} from 'react'
+//import locationData from '../data/location.json'
 
-class Restaurants extends Component{
+{/*class Restaurants extends Component{
 
  render() {
     return (
@@ -15,4 +15,4 @@ class Restaurants extends Component{
   }
 }
 
-export default Restaurants;
+export default Restaurants;*/}

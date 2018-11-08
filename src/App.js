@@ -2,10 +2,9 @@
 import React, { Component } from 'react'
 import Map from './components/Map'
 import Restaurants from './components/Restaurants'
-import locationData from './data/location.json'
+import locations from './data/location.json'
 import './App.css'
 import axios from 'axios'
-import json-loader from 'package.json-'
 import GoogleMapReact from 'google-map-react'
 
 
@@ -22,7 +21,7 @@ componentDidMount() {
 	
 }
 componetWillMount(){
-	axios.get("https://api.myjson.com/bins/sg80ujson")
+	axios.get(window.location.json)
 	.then(response => {
 		this.setState({markers: response.data});
 	}).catch(function(error){

@@ -1,4 +1,4 @@
-export default locations = [
+{ "locations ": [
 	{
 		"name": "Daily Buzz",
 		"address": "124 E Walnut St APt 124",
@@ -44,5 +44,5 @@ export default locations = [
 		"latLong": {"lat":44.5165 , "lng": -88.0155 },
 		"specialty": "cakes and pastries"
 	}]
-
-//used myjson- api: https://api.myjson.com/bins/sg80u
+}
+//used myjson- api: https://api.myjson.com/bins/sg80u}
