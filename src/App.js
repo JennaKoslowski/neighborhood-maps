@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
 import Map from './components/Map'
+import Restaurants from './components/Restaurants'
 import locationData from './location.json'
 import './App.css'
 import axios from 'axios'
@@ -11,7 +12,7 @@ class App extends Component {
 
 state = {
 	markers: [],
-	locations: []
+	location: []
 }
 
 componentDidMount() {
@@ -19,12 +20,13 @@ componentDidMount() {
 	this.createMarkers()
 }
 componetWillMount(){
-	axios.get(window.location.json)
-.then(response => {
-	this.setState({markers: response.data});
-}).catch(function(error){
-	console.log(error);
-})
+	getJSON= ()=>{
+		axios.get("https://api.myjson.com/bins/sg80u")
+	.then(response => {
+		this.setState({markers: response.data});
+	}).catch(function(error){
+		console.log(error);
+	})}
 }
 
 
@@ -42,7 +44,7 @@ renderMap=()=>{
 
 createMarkers = () => {
     let marker= new window.google.maps.Marker({
-      position: {lat: window.location.latLong}
+      position: {window.location.latLong}
     }); this.state.markers.push(this.marker);
   }
 
@@ -52,7 +54,7 @@ createMarkers = () => {
     	<h1>Coffee in Green Bay, WI</h1>
        <Map role= "application"
        aria-label = "map" />
-      
+      <Restaurants/>
        </main>
     );
   }
