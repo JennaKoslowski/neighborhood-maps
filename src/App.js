@@ -5,6 +5,7 @@ import Restaurants from './components/Restaurants'
 import locationData from './location.json'
 import './App.css'
 import axios from 'axios'
+//import json-loader from 'package.json-'
 import GoogleMapReact from 'google-map-react'
 
 
@@ -18,16 +19,16 @@ state = {
 componentDidMount() {
 	this.renderMap()
 	this.createMarkers()
+	
 }
 componetWillMount(){
-	getJSON= ()=>{
-		axios.get("https://api.myjson.com/bins/sg80u")
+	axios.get("https://api.myjson.com/bins/sg80ujson")
 	.then(response => {
 		this.setState({markers: response.data});
 	}).catch(function(error){
 		console.log(error);
 	})}
-}
+
 
 
 initMap=()=> {
@@ -43,9 +44,10 @@ renderMap=()=>{
 }
 
 createMarkers = () => {
-    let marker= new window.google.maps.Marker({
-      position: {window.location.latLong}
-    }); this.state.markers.push(this.marker);
+    let markers= new window.google.maps.Marker({
+     position: {lat: window.location.location.lat, lng: window.location.location.lng}
+    }); 
+    this.state.markers.push(this.markers);
   }
 
   render() {
