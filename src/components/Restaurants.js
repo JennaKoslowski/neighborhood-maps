@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import locationData from '../location.json'
+import locationData from '../data/location.json'
 
 class Restaurants extends Component{
 

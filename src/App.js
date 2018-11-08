@@ -2,10 +2,10 @@
 import React, { Component } from 'react'
 import Map from './components/Map'
 import Restaurants from './components/Restaurants'
-import locationData from './location.json'
+import locationData from './data/location.json'
 import './App.css'
 import axios from 'axios'
-//import json-loader from 'package.json-'
+import json-loader from 'package.json-'
 import GoogleMapReact from 'google-map-react'
 
 
