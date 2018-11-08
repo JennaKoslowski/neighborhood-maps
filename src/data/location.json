@@ -1,11 +1,12 @@
-{ "locations ": [
+{ "locations" : [
 	{
 		"name": "Daily Buzz",
 		"address": "124 E Walnut St APt 124",
 		"city": "Green Bay",
 		"state": "Wisconsin" ,
-		"website": "http://www.dailybuzzgb.com/",
-		"latLong": {"lat":44.5165 , "lng": -88.0155 },
+		"website": "http://www.dailybuzzgb.com",
+		"lat":44.5165 , 
+		"lng": -88.0155,
 		"specialty": "bakery items"
 	},
 	{
@@ -13,8 +14,9 @@
 		"address": "143 N. Broadway",
 		"city": "Green Bay",
 		"state": "Wisconsin",
-		"website": "https://kavarna.com/",
-		"latLong": {"lat":44.5175 , "lng": -88.0214 },
+		"website": "https://kavarna.com",
+		"lat":44.5175 , 
+		"lng": -88.0214,
 		"specialty": "hummus and vegetarian options"
 	},
 	{
@@ -22,8 +24,9 @@
 		"address": "730 Bodart St",
 		"city": "Green Bay",
 		"state": "Wisconsin",
-		"website": "https://theatticcorner.com/",
-		"latLong": {"lat":44.5142 , "lng": -88.0059 },
+		"website": "https://theatticcorner.com",
+		"lat":44.5142 ,
+		"lng": -88.0059 ,
 		"specialty": "seasonal cider and teas"
 	},
 	{
@@ -31,8 +34,9 @@
 		"address": "313 Dousman St",
 		"city": "Green Bay",
 		"state": "Wisconsin",
-		"website": "https://www.copperrockcoffee.com/",
-		"latLong": {"lat":44.2620 , "lng": -88.4079 },
+		"website": "https://www.copperrockcoffee.com",
+		"lat":44.2620 ,
+		"lng": -88.4079 ,
 		"specialty": "in-house roasting"
 	},
 	{
@@ -40,8 +44,9 @@
 		"address": "114 Pine St.",
 		"city": "Green Bay",
 		"state": "Wisconsin",
-		"website": "https://www.thecreamerycafe.com/",
-		"latLong": {"lat":44.5165 , "lng": -88.0155 },
+		"website": "https://www.thecreamerycafe.com",
+		"lat":44.5165 , 
+		"lng": -88.0155 ,
 		"specialty": "cakes and pastries"
 	}]
 }
