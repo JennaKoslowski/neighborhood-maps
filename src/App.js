@@ -6,7 +6,7 @@ import Map from './components/Map'
 import './App.css'
 import axios from 'axios'
 import GoogleMapReact from 'google-map-react'
-
+import SearchBar from './components/SearchBar'
 
 class App extends Component {
 
