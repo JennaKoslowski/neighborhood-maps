@@ -13,15 +13,17 @@ componentDidMount(){
 
 
 createMarkers = () => {
-  let url = "https://api.myjson.com/bins/sg80u"
+  let url = "https://api.myjson.com/bins/kqq1y"
   axios.get(url)
   .then(response => {
     console.log(response)
     //this.state.locations.push(this.locations)
-    this.setState({locationData: [this.state.locationData, this.locationData]});
+    this.setState({locations: [this.state.locations, this.locations]});
   }).catch(function(error){
     console.log(error);
-  })/*"https://api.myjson.com/bins/sg80u"*/
+  })/*named array:"https://api.myjson.com/bins/sg80u"
+    unnamed array: "https://api.myjson.com/bins/kqq1y"
+  */
 	this.state.locations.map(location =>{
     let markers= new window.google.maps.Marker({
      position: {lat: window.locations.lat, lng: window.locations.lng},
