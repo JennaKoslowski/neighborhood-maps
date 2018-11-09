@@ -8,9 +8,6 @@ class Restaurants extends Component{
 componentDidMount(){
 	this.createMarkers()
 }
-//still works
-	
-
 
 createMarkers = () => {
  // let url = ""

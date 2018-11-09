@@ -1,4 +1,4 @@
- [
+{ "locations" : [
 	{
 		"name": "Daily Buzz",
 		"address": "124 E Walnut St APt 124",
@@ -49,3 +49,4 @@
 		"lng": -88.0155 ,
 		"specialty": "cakes and pastries"
 	}]
+}
