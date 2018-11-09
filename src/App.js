@@ -9,6 +9,11 @@ import SearchBar from './components/SearchBar'
 
 class App extends Component {
 
+state = {
+	markers: [],
+	locations: [],
+}
+
 componentDidMount() {
 	this.renderMap()
 }

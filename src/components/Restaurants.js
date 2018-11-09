@@ -5,11 +5,6 @@ import axios from 'axios'
 
 class Restaurants extends Component{
 
-state = {
-	markers: [],
-	locations: [],
-}
-
 componentDidMount(){
 	this.createMarkers()
 }
