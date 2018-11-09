@@ -17,8 +17,8 @@ createMarkers = () => {
   axios.get(url)
   .then(response => {
     console.log(response)
-    this.state.locations.push(this.locations)
-    this.setState({markers: response.data});
+    //this.state.locations.push(this.locations)
+    this.setState({locations: response.data});
   }).catch(function(error){
     console.log(error);
   })/*"https://api.myjson.com/bins/sg80u"*/
