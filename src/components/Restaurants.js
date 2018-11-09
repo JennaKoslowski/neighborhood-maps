@@ -8,16 +8,20 @@ class Restaurants extends Component{
 componentDidMount(){
 	this.createMarkers()
 }
-componetWillMount(){//still works
-	axios.get("https://api.myjson.com/bins/sg80u")
-	.then(response => {
-		this.setState({markers: response.data});
-	}).catch(function(error){
-		console.log(error);
-	})}/*"https://api.myjson.com/bins/sg80u"*/
+//still works
+	
 
 
 createMarkers = () => {
+  let url = "https://api.myjson.com/bins/sg80u"
+  axios.get(url)
+  .then(response => {
+    console.log(response)
+    //this.state.locations.push(this.locations)
+    this.setState({markers: response.data});
+  }).catch(function(error){
+    console.log(error);
+  })/*"https://api.myjson.com/bins/sg80u"*/
 	this.state.locations.map(location =>{
     let markers= new window.google.maps.Marker({
      position: {lat: window.locations.lat, lng: window.locations.lng},
@@ -25,7 +29,8 @@ createMarkers = () => {
     }); 
     this.state.markers.push(this.markers);
     console.log(markers)
-  })}
+  })
+}
 
  render() {
     return (
