@@ -45,8 +45,9 @@ renderMap=()=>{
        <Map role= "application" 
        aria-label = "map" >
      <Restaurants {...this.state}/></Map>
-     <SearchBar />
      </div>
+     <div id="search-local">
+      <SearchBar /> </div>
       </main>
     );
   }

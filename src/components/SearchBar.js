@@ -38,13 +38,13 @@ class SearchBar extends Component{
       
 		return (
           <div className="search-locations">
-            <div className="search-locationsbooks-bar">
-              <div className="search-books-input-wrapper">
+            <div className="search-locations-bar">
+              <div className="search-location-input-wrapper">
               {JSON.stringify(this.state.query)}
                <input //update state and value of input field
                className="search-text"
                	type="text" //user enters text
-               	placeholder="Search by location."
+               	placeholder="Search by location"
                	value={this.state.query} 
                	onChange={(e) => this.updateSearch(e.target.value)} 
                	/>
