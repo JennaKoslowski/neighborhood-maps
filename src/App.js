@@ -1,10 +1,9 @@
 
 import React, { Component } from 'react'
 import Map from './components/Map'
-//import Restaurants from './components/Restaurants'
-//import locationData from './data/location.json'
+import Restaurants from './components/Restaurants'
+import locationData from './data/location.json'
 import './App.css'
-import axios from 'axios'
 import GoogleMapReact from 'google-map-react'
 import SearchBar from './components/SearchBar'
 
@@ -12,26 +11,17 @@ class App extends Component {
 
 state = {
 	markers: [],
-	location: []
+	locations: [],
 }
 
 componentDidMount() {
 	this.renderMap()
-	//this.createMarkers()
-	
 }
-componetWillMount(){//still works
-	axios.get(window.location.json)
-	.then(response => {
-		this.setState({markers: response.data});
-	}).catch(function(error){
-		console.log(error);
-	})}/*https://api.myjson.com/bins/sg80u*/
 
 initMap=()=> {
    let map= new window.google.maps.Map(document.getElementById('map'), {
    center: {lat: 44.519159, lng: -88.019826}, 
-   zoom: 12})  
+   zoom: 12});  
   }	
 
 
@@ -51,10 +41,12 @@ renderMap=()=>{
     return (
     	<main>
     	<h1>Coffee in Green Bay, WI</h1>
-       <Map role= "application"
-       aria-label = "map" />
-     
-       </main>
+       <div id="map"> 
+       <Map role= "application" 
+       aria-label = "map" >
+     <Restaurants {...this.state}/></Map>
+     </div>
+      </main>
     );
   }
 }
