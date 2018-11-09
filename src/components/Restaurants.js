@@ -17,7 +17,7 @@ createMarkers = () => {
   axios.get(url)
   .then(response => {
     console.log(response)
-    //this.state.locations.push(this.locations)
+    this.state.locations.push(this.locations)
     this.setState({markers: response.data});
   }).catch(function(error){
     console.log(error);
