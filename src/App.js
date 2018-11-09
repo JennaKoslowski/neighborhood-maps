@@ -37,7 +37,7 @@ renderMap=()=>{
        <div id="map"> 
        <Map role= "application" 
        aria-label = "map" >
-     <Restaurants /></Map>
+     <Restaurants {...this.state}/></Map>
      </div>
       </main>
     );

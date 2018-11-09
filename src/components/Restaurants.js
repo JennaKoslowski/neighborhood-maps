@@ -5,9 +5,9 @@ import axios from 'axios'
 
 class Restaurants extends Component{
 
-componentDidMount(){
-	this.createMarkers()
-}
+//componentDidMount(){
+	//this.createMarkers()
+//}
 //still works
 	
 
@@ -18,20 +18,20 @@ createMarkers = () => {
   .then(response => {
     console.log(response)
     //this.state.locations.push(this.locations)
-    this.setState({locations: [this.state.locations, this.locations]});
+    this.setState({locations: [this.state.locations, this.locationData]});
   }).catch(function(error){
     console.log(error);
   })/*named array:"https://api.myjson.com/bins/sg80u"
     unnamed array: "https://api.myjson.com/bins/kqq1y"
   */
-	this.state.locations.map(location =>{
+	{/*this.state.locations.map(location =>{
     let markers= new window.google.maps.Marker({
      position: {lat: window.locations.lat, lng: window.locations.lng},
      map: this.initMap
     }); 
     this.setState({markers:[this.state.markers, this.markers]});
     console.log(markers)
-  })
+  })*/}
 }
 
  render() {
