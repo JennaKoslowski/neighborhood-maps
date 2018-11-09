@@ -18,7 +18,7 @@ createMarkers = () => {
   .then(response => {
     console.log(response)
     //this.state.locations.push(this.locations)
-    this.setState({locationData: [this.state.locations, this.locations]});
+    this.setState({locationData: [this.state.locationData, this.locationData]});
   }).catch(function(error){
     console.log(error);
   })/*"https://api.myjson.com/bins/sg80u"*/
