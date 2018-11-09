@@ -7,7 +7,7 @@ class Restaurants extends Component{
 
 state = {
 	markers: [],
-	locations: []
+	locations: [],
 }
 
 componentDidMount(){
@@ -26,9 +26,10 @@ createMarkers = () => {
 	this.state.locations.map(location =>{
     let markers= new window.google.maps.Marker({
      position: {lat: window.location.location.lat, lng: window.location.location.lng},
-     
+     map: this.initMap
     }); 
     this.state.markers.push(this.markers);
+    console.log(markers)
   })}
 
  render() {
