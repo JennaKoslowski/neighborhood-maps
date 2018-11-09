@@ -25,10 +25,10 @@ componetWillMount(){//still works
 createMarkers = () => {
 	this.state.locations.map(location =>{
     let markers= new window.google.maps.Marker({
-     position: {lat: window.location.location.lat, lng: window.location.location.lng}
+     position: {lat: window.location.location.lat, lng: window.location.location.lng},
+     
     }); 
     this.state.markers.push(this.markers);
-    console.log(markers)
   })}
 
  render() {

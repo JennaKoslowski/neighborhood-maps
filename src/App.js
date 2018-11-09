@@ -29,10 +29,12 @@ renderMap=()=>{
     return (
     	<main>
     	<h1>Coffee in Green Bay, WI</h1>
-       <Map role= "application"
-       aria-label = "map" />
-     <Restaurants />
-       </main>
+       <div id="map"> 
+       <Map role= "application" 
+       aria-label = "map" >
+     <Restaurants /></Map>
+     </div>
+      </main>
     );
   }
 }
