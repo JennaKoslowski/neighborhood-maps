@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This project displays a selection of the top five locally-owned coffee shops in downtown Green Bay, WI. Feel free to use the search feature to narrow them down faster.
+
 Clone or download repository.
 cd into the current project
 open git and run: npm start
