@@ -41,13 +41,14 @@ renderMap=()=>{
     return (
     	<main>
     	<h1>Coffee in Green Bay, WI</h1>
+    	 <div id="search-local">
+      <SearchBar /> </div>
        <div id="map"> 
        <Map role= "application" 
        aria-label = "map" >
      <Restaurants {...this.state}/></Map>
      </div>
-     <div id="search-local">
-      <SearchBar /> </div>
+    
       </main>
     );
   }
