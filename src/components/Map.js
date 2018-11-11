@@ -11,13 +11,19 @@ initMap=()=> {
    center: {lat: 44.519159, lng: -88.019826}, 
    zoom: 12
 	});  
-   this.state.foursquareData.map(createMarkers => {
+   /*this.state.foursquareData.map(createMarker => {
  	 let markers= new window.google.maps.Marker({
-     position: {lat:this.state.foursquareData.venue.location.lat, lng:this.state.foursquareDatavenue.location.lng}
-     //map:map
-    }); 
-})
+     position: {lat:this.state.foursquareData.venue.location.lat, lng:this.state.foursquareData.venue.location.lng},
+     map:map
+     //infowindow added here
+    }); */
+ 	var createMarkers = () => {
+    let markers= new window.google.maps.Marker({
+     position: {lat:this.state.foursquareData.venue.location.lat, lng:this.state.foursquareData.venue.location.lng}
+    })
+    //this.state.markers.push(this.markers);
   }
+}
 
 renderMap=()=>{
 	loadMap("https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyC5-0uFUUOwNG8qyC82A6zUbfD619EbDUw&callback=initMap")
