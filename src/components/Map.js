@@ -1,23 +1,45 @@
 import React, { Component } from 'react'
 
 class Map extends Component {
+
+state = {
+	map:null,
+	infowindow:null,
+	filteredMarkers:[]
+}
   
-componentDidMount() {
+componentWillMount() {
   this.renderMap()
 }
+componentWillReceiveProps = props => {
+    console.log(props);
+    const { foursquareData } = props;
+    const filteredMarkers = [];
+    foursquareData.forEach(location => {
+      console.log(location);
+      const marker = new window.google.maps.Marker({
+        position: new window.google.maps.LatLng(
+          location.venue.location.lat,
+          location.venue.location.lng
+        ),
+        map: this.state.map
+      });
+      filteredMarkers.push(marker);
+    });
+    this.setState(
+      {
+        filteredMarkers
+      },
+      () => console.log(this.state)
+    );
+  };
 
 initMap=()=> {
    let map= new window.google.maps.Map(document.getElementById('map'), {
    center: {lat: 44.519159, lng: -88.019826}, 
    zoom: 12
 	});  
-   this.props.foursquareData.map(createMarkers => {
- 	 new window.google.maps.Marker({
-     position: {lat:createMarkers.venue.location.lat, lng:createMarkers.venue.location.lng},
-     map:map
-     //infowindow added here
-    }); this.setState({createMarkers: this.props.foursquareData.venue})
-})
+    this.setState({map});
   }
 
 renderMap=()=>{

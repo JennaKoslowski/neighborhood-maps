@@ -48,7 +48,7 @@ componentDidMount() {
       {/*<SearchBar />
       </div>*/}
        <div id="map"> 
-       <Map {...this.state} role= "application" 
+       <Map foursquareData={this.state.foursquareData} role= "application" 
        aria-label = "map" >
      <Restaurants {...this.state}/>
      </Map>
