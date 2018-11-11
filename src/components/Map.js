@@ -13,7 +13,7 @@ initMap=()=> {
 	});  
    this.props.foursquareData.map(createMarkers => {
  	 let markers= new window.google.maps.Marker({
-     position: {lat:this.state.foursquareData.venue.location.lat, lng:this.state.foursquareData.venue.location.lng},
+     position: {lat:createMarkers.venue.location.lat, lng:createMarkers.venue.location.lng},
      map:map
      //infowindow added here
     }); 
