@@ -12,7 +12,7 @@ initMap=()=> {
    zoom: 12
 	});  
    this.props.foursquareData.map(createMarkers => {
- 	 let markers= new window.google.maps.Marker({
+ 	 new window.google.maps.Marker({
      position: {lat:createMarkers.venue.location.lat, lng:createMarkers.venue.location.lng},
      map:map
      //infowindow added here

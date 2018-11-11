@@ -9,9 +9,9 @@ import axios from 'axios'
 class App extends Component {
 
 state = {
-	markers: [],
+	createMarkers: [],
 	locations: [],
-	foursquareData:[]
+	foursquareData:[],
 }
 
 componentDidMount() {
