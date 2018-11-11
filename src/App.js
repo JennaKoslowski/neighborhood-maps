@@ -13,6 +13,7 @@ state = {
 	locations: [],
 	foursquareData:[]
 }
+
 componentDidMount() {
   this.renderFoursquare()
 }
