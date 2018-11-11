@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import Markers from './Markers.js'
-
 
 class Map extends Component {
   
@@ -11,9 +9,15 @@ componentDidMount() {
 initMap=()=> {
    let map= new window.google.maps.Map(document.getElementById('map'), {
    center: {lat: 44.519159, lng: -88.019826}, 
-   zoom: 12});  
-   this.createMarkers()
-  }	
+   zoom: 12
+	});  
+   this.state.foursquareData.map(createMarkers => {
+ 	 let markers= new window.google.maps.Marker({
+     position: {lat:this.state.foursquareData.venue.location.lat, lng:this.state.foursquareDatavenue.location.lng}
+     //map:map
+    }); 
+})
+  }
 
 renderMap=()=>{
 	loadMap("https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyC5-0uFUUOwNG8qyC82A6zUbfD619EbDUw&callback=initMap")

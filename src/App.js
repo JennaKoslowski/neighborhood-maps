@@ -19,7 +19,7 @@ componentDidMount() {
 
  renderFoursquare = (query) => { //need to use in both searchbar and restaurants
   const endpoint= "https://api.foursquare.com/v2/venues/explore?"
-  let foursquareInfo= { 
+  let foursquareInfo= { //https://alligator.io/react/axios-react/
     client_id: "5GRVKAT5C2F1EALKLBKBQQLJPSL2CKLUQXSQI3O3LHANQNK5",
     client_secret: "GETW1UOWQITCGPGNCIDQTA3QSZ2PD1YCD4HFT3BCFE4MXXO4",
     near: "Green Bay",
@@ -32,8 +32,8 @@ componentDidMount() {
   .then(res => {
     const foursquareData = res.data.response.groups[0].items
     this.setState({foursquareData: res.data.response.groups[0].items});
-    // console.log(res.data.response.groups[0].items)
-    //console.log({foursquareData})
+     console.log(res.data.response.groups[0].items)
+    console.log({foursquareData})
   }).catch(error=> {
     console.log("Error:" +error)
   }) 
@@ -46,9 +46,10 @@ componentDidMount() {
     	 <div id="search-local">
       <SearchBar /> </div>
        <div id="map"> 
-       <Map role= "application" 
+       <Map {...this.state} role= "application" 
        aria-label = "map" >
-     <Restaurants {...this.state}/></Map>
+     <Restaurants {...this.state}/>
+     </Map>
      </div>
     
       </main>
