@@ -6,16 +6,19 @@ import locationData from './data/location.json'
 import './App.css'
 import GoogleMapReact from 'google-map-react'
 import SearchBar from './components/SearchBar'
+import axios from 'axios'
 
 class App extends Component {
 
 state = {
 	markers: [],
 	locations: [],
+	foursquareInfo:[]
 }
 
 componentDidMount() {
 	this.renderMap()
+	this.renderFoursquare()
 }
 
 initMap=()=> {
@@ -36,6 +39,25 @@ renderMap=()=>{
     }); 
     this.state.markers.push(this.markers);
   }*/
+  renderFoursquare = (query) => {
+	const endpoint= "https://api.foursquare.com/v2/venues/explore?"
+	let foursquareInfo= { // missing access credentials
+		client_id: "5GRVKAT5C2F1EALKLBKBQQLJPSL2CKLUQXSQI3O3LHANQNK5",
+		client_secret: "GETW1UOWQITCGPGNCIDQTA3QSZ2PD1YCD4HFT3BCFE4MXXO4",
+		near: "Green Bay",
+		query: "coffee",
+		limit: 10,
+		radius: 16093.4,
+		v: "20181106"
+	}
+	axios.get(endpoint + new URLSearchParams(foursquareInfo))
+	.then(res => {
+		// this.setState({foursquareInfo: res.data});
+		 console.log(res)
+	}).catch(error=> {
+		console.log("Error:" +error)
+	}) 
+}
 
   render() {
     return (
