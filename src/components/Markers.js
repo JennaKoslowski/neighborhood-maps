@@ -1,25 +1,23 @@
 import React, {Component} from 'react'
+import App from '../app.js'
 
-class Restaurants extends Component{
+class Markers extends Component{
 
-
-/*createMarkers = () => {
+createMarkers = () => {
     let markers= new window.google.maps.Marker({
-     position: {lat: window.location.location.lat, lng: window.location.location.lng}
+     position: {lat: , lng: }
     }); 
     this.state.markers.push(this.markers);
-  }*/
+  }
  
 
  render() {
     return (
     	<p>
-    	{this.state.locations.map(locations=><li>{locations.name}</li>)
-    	}
       
        </p>
     );
   }
 }
 
-export default Restaurants;
+export default Markers;

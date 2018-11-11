@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Markers from './Markers.js'
 
 
 class Map extends Component {
@@ -11,6 +12,7 @@ initMap=()=> {
    let map= new window.google.maps.Map(document.getElementById('map'), {
    center: {lat: 44.519159, lng: -88.019826}, 
    zoom: 12});  
+   this.createMarkers()
   }	
 
 renderMap=()=>{
