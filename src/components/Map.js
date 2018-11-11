@@ -16,7 +16,7 @@ initMap=()=> {
      position: {lat:createMarkers.venue.location.lat, lng:createMarkers.venue.location.lng},
      map:map
      //infowindow added here
-    }); 
+    }); this.setState({createMarkers: this.props.foursquareData.venue})
 })
   }
 
