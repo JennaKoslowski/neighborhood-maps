@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import location from '../data/location.json'
 import Restaurants from './Restaurants'
-import GoogleMapReact from 'google-map-react'
 
 class SearchBar extends Component{
 //taken/ modified from myReads project
