@@ -53,7 +53,7 @@ class SearchBar extends Component{
               		{this.state.searchResults.map(searchResult => {
                     return(
                           <li key={searchResult.name}> 
-                            <Restaurants filteredLocations={searchResult}
+                            <Restaurants filteredLocations={this.state.filteredLocations}
                             updateResults={this.props.updateResults}
                            foursquareData={this.state.foursquareData}
                            />

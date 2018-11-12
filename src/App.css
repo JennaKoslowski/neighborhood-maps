@@ -46,7 +46,7 @@ input.search-text{
 }
 .web-content {
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
 }
 html, body {
   height: 100vh;
