@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import location from '../data/location.json'
 import Restaurants from './Restaurants'
 
 class SearchBar extends Component{
@@ -32,7 +31,7 @@ class SearchBar extends Component{
     else {
       this.setState({searchResults: []})
     }
-  } search was a function tehy created in the BooksAPI file
+  } search was a function they created in the BooksAPI file
 */ 
 	render() {
       let filteredLocations = this.state.searchResults.filter(//.name- change to point to name of place
@@ -40,7 +39,7 @@ class SearchBar extends Component{
 		return (
           <div className="search-locations">
               <div className="search-location-input-wrapper">
-              {JSON.stringify(this.state.query)}
+              {/*{JSON.stringify(this.state.query)}*/}
                <input //update state and value of input field
                className="search-text"
                	type="text" //user enters text
@@ -49,13 +48,14 @@ class SearchBar extends Component{
                	onChange={(e) => this.updateSearch(e.target.query)} //not a function
                	/>
               </div>
-            <div className="search-books-results">
-              <ol className="location-list">*/}
+            <div className="search-locations-results">
+              <ol className="location-list">
               		{this.state.searchResults.map(searchResult => {
                     return(
                           <li key={searchResult.name}> 
                             <Restaurants filteredLocations={searchResult}
                             updateResults={this.props.updateResults}
+                           foursquareData={this.state.foursquareData}
                            />
                           </li>) 
                         } )} 

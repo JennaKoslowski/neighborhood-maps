@@ -16,16 +16,34 @@
   margin: auto;
 }
 input.search-text{
+  height: 10%;
   width: 90%;
   margin-top: 20px;
 }
+
+.search-locations-results {
+  height: 90%;
+}
+.location-list {
+  height: inherit;
+  width: inherit;
+}
+
+.restaurant-info {
+  width: 100%;
+  height: 50px;
+  margin: auto;
+  padding: 20px, 10px,;
+}
+
 #map {
   height: 100vh;
-  width: 100%;
+  width: 75%;
   position: fixed;
   display: flex;
   z-index: -4;
 }
+
 html, body {
   height: 100vh;
   margin: 0;

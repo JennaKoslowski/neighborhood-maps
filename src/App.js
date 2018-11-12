@@ -45,12 +45,13 @@ componentDidMount() {
     	<main>
     	<h1>Coffee in Green Bay, WI</h1>
     	 <div id="search-local">
-      <SearchBar foursquareData={this.state.foursquareData}/>
+      <SearchBar foursquareData={this.state.foursquareData}>
+            <Restaurants foursquareData={this.state.foursquareData}/>
+      </SearchBar>
       </div>
        <div id="map"> 
-       <Map foursquareData={this.state.foursquareData} role= "application" 
+      <Map foursquareData={this.state.foursquareData} role= "application" 
        aria-label = "map" >
-     <Restaurants foursquareData={this.state.foursquareData}/>
      </Map>
      </div>
     

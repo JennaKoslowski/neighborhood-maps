@@ -4,11 +4,7 @@ import React, {Component} from 'react'
 class Restaurants extends Component{
 
  render() {
-    return (
-    	<div>
-    	{this.state.foursquareData.map(
-        locations=><li>{locations.name}</li>)}
-       </div>
+    <RestaurantListing/>
     );
   }
 }
