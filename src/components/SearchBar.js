@@ -15,7 +15,7 @@ class SearchBar extends Component{
     //const searchResults = props; 
   //};
 
-	/*updateSearch = (query) => {
+	updateSearch = (query) => {
 	  	this.setState({query: query})
 	  	this.updateSearched(query);
 	  }
@@ -32,11 +32,11 @@ class SearchBar extends Component{
     else {
       this.setState({searchResults: []})
     }
-  }*/
+  }
 
 	render() {
-      let filteredLocations = this.state.searchResults.filter(
-        (searchResult)=> {return searchResult.name.indexOf(this.state.search) !=-1});
+     // let filteredLocations = this.state.searchResults.filter(//.name- change to point to name of place
+       // (searchResult)=> {return searchResult.name.indexOf(this.state.search) !=-1});
 		return (
           <div className="search-locations">
               <div className="search-location-input-wrapper">

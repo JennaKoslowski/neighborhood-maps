@@ -50,7 +50,7 @@ componentDidMount() {
        <div id="map"> 
        <Map foursquareData={this.state.foursquareData} role= "application" 
        aria-label = "map" >
-     <Restaurants {...this.state}/>
+     <Restaurants foursquareData={this.state.foursquareData}/>
      </Map>
      </div>
     
