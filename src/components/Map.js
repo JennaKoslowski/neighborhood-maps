@@ -22,7 +22,8 @@ componentWillReceiveProps = props => {
           location.venue.location.lat,
           location.venue.location.lng
         ),
-        map: this.state.map
+        map: this.state.map,
+        animation: window.google.maps.Animation.DROP,
       });
       filteredMarkers.push(marker);
     });
@@ -32,6 +33,10 @@ componentWillReceiveProps = props => {
       },
       () => console.log(this.state)
     );
+   // let infowindow = new window.google.maps.InfoWindow({
+     // content: {location.venue.location.address}
+      //content: {location.venue.name}
+    //})
   };
 
 initMap=()=> {
