@@ -35,7 +35,7 @@ class SearchBar extends Component{
 */ 
 	render() {
       let filteredLocations = this.state.searchResults.filter(//.name- change to point to name of place
-        (searchResult)=> {return searchResult.venue.name.indexOf(this.state.search) !=-1});
+        (searchResult)=> {return searchResult.venue.name.indexOf(this.state.search) !==-1});
 		return (
           <div className="search-locations">
               <div className="search-location-input-wrapper">

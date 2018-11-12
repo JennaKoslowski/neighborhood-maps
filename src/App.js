@@ -4,7 +4,6 @@ import Map from './components/Map'
 import Restaurants from './components/Restaurants'
 import './App.css'
 import SearchBar from './components/SearchBar'
-import RestaurantListing from './components/RestaurantListing'
 import axios from 'axios'
 
 class App extends Component {

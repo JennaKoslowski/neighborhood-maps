@@ -12,11 +12,9 @@ componentWillMount() {
   this.renderMap()
 }
 componentWillReceiveProps = props => {
-    console.log(props);
     const { foursquareData } = props;
     const filteredMarkers = [];
     foursquareData.forEach(location => {
-      console.log(location);
       const marker = new window.google.maps.Marker({
         position: new window.google.maps.LatLng(
           location.venue.location.lat,
