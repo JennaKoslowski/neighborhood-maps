@@ -17,10 +17,10 @@ class SearchBar extends Component{
 
 	updateSearch = (query) => {
 	  	this.setState({query: query})
-	  	this.updateSearched(query);
+	  	//this.updateSearched(query);
 	  }
 
-   updateSearched = (query) => {
+   /*updateSearched = (query) => {
     if (query){
             {foursquareData}.search(query).then(searchResults => // chage state of searchResults
               {
@@ -32,11 +32,11 @@ class SearchBar extends Component{
     else {
       this.setState({searchResults: []})
     }
-  }
-
+  } search was a function tehy created in the BooksAPI file
+*/ 
 	render() {
-     // let filteredLocations = this.state.searchResults.filter(//.name- change to point to name of place
-       // (searchResult)=> {return searchResult.name.indexOf(this.state.search) !=-1});
+      let filteredLocations = this.state.searchResults.filter(//.name- change to point to name of place
+        (searchResult)=> {return searchResult.venue.name.indexOf(this.state.search) !=-1});
 		return (
           <div className="search-locations">
               <div className="search-location-input-wrapper">
