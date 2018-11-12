@@ -34,7 +34,7 @@ class SearchBar extends Component{
   } search was a function they created in the BooksAPI file
 */ 
 	render() {
-      let filteredLocations = this.state.searchResults.filter(//.name- change to point to name of place
+       this.state.searchResults.filter(//.name- change to point to name of place
         (searchResult)=> {return searchResult.venue.name.indexOf(this.state.search) !==-1});
 		return (
           <div className="search-locations">
@@ -53,7 +53,7 @@ class SearchBar extends Component{
               		{this.state.searchResults.map(searchResult => {
                     return(
                           <li key={searchResult.name}> 
-                            <Restaurants filteredLocations={this.state.filteredLocations}
+                            <Restaurants
                             updateResults={this.props.updateResults}
                            foursquareData={this.state.foursquareData}
                            />
