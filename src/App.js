@@ -44,9 +44,9 @@ componentDidMount() {
     return (
     	<main>
     	<h1>Coffee in Green Bay, WI</h1>
-    	 {/*<div id="search-local">
-      {/*<SearchBar />
-      </div>*/}
+    	 <div id="search-local">
+      <SearchBar />
+      </div>
        <div id="map"> 
        <Map foursquareData={this.state.foursquareData} role= "application" 
        aria-label = "map" >

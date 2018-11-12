@@ -2,7 +2,7 @@
   height: 100%;
   width: 33%;
   background-color: black;
-  position: absolute;
+  position: fixed;
   overflow: scroll;
   margin: auto;
   display: flex;
@@ -10,9 +10,9 @@
 }
 .search-locations{
   height: 100%;
-  width: 100%;
+  width: inherit;
   background-color: black;
-  position: absolute;
+  position: fixed;
   margin: auto;
 }
 input.search-text{
