@@ -54,8 +54,7 @@ class SearchBar extends Component{
                     return(
                           <li key={searchResult.name}> 
                             <Restaurants
-                            updateResults={this.props.updateResults}
-                           foursquareData={this.state.foursquareData}
+                         
                            />
                           </li>) 
                         } )} 

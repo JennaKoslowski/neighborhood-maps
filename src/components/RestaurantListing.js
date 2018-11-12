@@ -5,9 +5,9 @@ class RestaurantListing extends Component{
  render() {
     return (
     	<div class="restaurant-item">
-        <div> 
+        <h1> 
           Hello
-        </div>
+        </h1>
        </div>
     );
   }
