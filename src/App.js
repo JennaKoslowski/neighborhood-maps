@@ -45,7 +45,7 @@ componentDidMount() {
     	<main>
     	<h1>Coffee in Green Bay, WI</h1>
     	 <div id="search-local">
-      <SearchBar />
+      <SearchBar foursquareData={this.state.foursquareData}/>
       </div>
        <div id="map"> 
        <Map foursquareData={this.state.foursquareData} role= "application" 

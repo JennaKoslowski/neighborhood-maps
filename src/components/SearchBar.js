@@ -3,25 +3,25 @@ import location from '../data/location.json'
 import Restaurants from './Restaurants'
 
 class SearchBar extends Component{
-//taken/ modified from myReads project
+//taken and modified from myReads project
  state = {
  query: '',
  searchResults: [],
+ filteredLocations: []
 }
+//componentWillReceiveProps = props => {
+  //  console.log(props);
+    //const searchResults = props; 
+  //};
 
-  //componentDidMount() {
-   // window.locations.getAll().then((locations)=>{
-    //      this.setState({locations: locations})}
-   // ) }
-
-	updateSearch = (query) => {
+	/*updateSearch = (query) => {
 	  	this.setState({query: query})
 	  	this.updateSearched(query);
 	  }
 
    updateSearched = (query) => {
     if (query){
-            location.search(query).then((searchResults)=> // chage state of serachResults
+            {foursquareData}.search(query).then(searchResults => // chage state of searchResults
               {
             if(searchResults.error){ //if no results when typing/ backspace keep as array
               this.setState({searchResults: []}) 
@@ -31,10 +31,11 @@ class SearchBar extends Component{
     else {
       this.setState({searchResults: []})
     }
-  }
+  }*/
 
 	render() {
-      
+      let filteredLocations = this.state.searchResults.filter(
+        (searchResult)=> {return searchResult.name.indexOf(this.state.search) !=-1});
 		return (
           <div className="search-locations">
               <div className="search-location-input-wrapper">
@@ -44,15 +45,15 @@ class SearchBar extends Component{
                	type="text" //user enters text
                	placeholder="Search location"
                	value={this.state.query} 
-               	onChange={(e) => this.updateSearch(e.target.value)} 
+               	//onChange={(e) => this.updateSearch(this.state.searchResult)} 
                	/>
               </div>
             <div className="search-books-results">
-              <ol className="location-list"> {/*display books matching searchResults*/}
+              <ol className="location-list">*/}
               		{this.state.searchResults.map(searchResult => {
                     return(
                           <li key={searchResult.name}> 
-                            <Restaurants locations={searchResult}
+                            <Restaurants filteredLocations={searchResult}
                             updateResults={this.props.updateResults}
                            />
                           </li>) 
