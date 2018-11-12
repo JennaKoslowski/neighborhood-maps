@@ -7,7 +7,8 @@ class SearchBar extends Component{
  state = {
  query: '',
  searchResults: [],
- filteredLocations: []
+ filteredLocations: [],
+ updateSearch: ''
 }
 //componentWillReceiveProps = props => {
   //  console.log(props);
@@ -23,7 +24,7 @@ class SearchBar extends Component{
     if (query){
             {foursquareData}.search(query).then(searchResults => // chage state of searchResults
               {
-            if(searchResults.error){ //if no results when typing/ backspace keep as array
+            if(searchResults.error){ //this.state or no- check github if no results when typing/ backspace keep as array
               this.setState({searchResults: []}) 
             } else{
               this.setState({searchResults:searchResults})
@@ -45,7 +46,7 @@ class SearchBar extends Component{
                	type="text" //user enters text
                	placeholder="Search location"
                	value={this.state.query} 
-               	//onChange={(e) => this.updateSearch(this.state.searchResult)} 
+               	onChange={(e) => this.updateSearch(e.target.query)} //not a function
                	/>
               </div>
             <div className="search-books-results">
