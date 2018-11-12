@@ -1,11 +1,16 @@
 import React, {Component} from 'react'
+import RestaurantListing from './RestaurantListing'
 //import axios from 'axios'
 
 class Restaurants extends Component{
 
  render() {
-    <RestaurantListing/>
-    );
+
+  return (
+    <div className="restaurant-info">
+      <RestaurantListing/>
+      </div>
+      )
   }
 }
 

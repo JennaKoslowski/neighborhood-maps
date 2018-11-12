@@ -4,9 +4,9 @@ class RestaurantListing extends Component{
 
  render() {
     return (
-    	<div class="restaurant-info">
+    	<div class="restaurant-item">
         <div> 
-          location.venue.name
+          Hello
         </div>
        </div>
     );
