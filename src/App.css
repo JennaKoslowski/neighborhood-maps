@@ -42,8 +42,12 @@ input.search-text{
   position: fixed;
   display: flex;
   z-index: -4;
+  flex: 2;
 }
-
+.web-content {
+  display: flex;
+  flex-direction: row;
+}
 html, body {
   height: 100vh;
   margin: 0;

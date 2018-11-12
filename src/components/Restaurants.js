@@ -8,7 +8,7 @@ class Restaurants extends Component{
 
   return (
     <div className="restaurant-info">
-      <RestaurantListing/>
+      <RestaurantListing foursquareData={this.foursquareData}/>
       </div>
       )
   }

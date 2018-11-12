@@ -45,9 +45,10 @@ componentDidMount() {
     return (
     	<main>
     	<h1>Coffee in Green Bay, WI</h1>
+      <div className="web-content">
     	 <div id="search-local">
       <SearchBar foursquareData={this.state.foursquareData}>
-            <Restaurants foursquareData={this.state.foursquareData}/>
+            <Restaurants foursquareData={this.state.foursquareData} />
       </SearchBar>
       </div>
        <div id="map"> 
@@ -55,7 +56,7 @@ componentDidMount() {
        aria-label = "map" >
      </Map>
      </div>
-    
+    </div>
       </main>
     );
   }
