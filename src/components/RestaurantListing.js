@@ -1,15 +1,13 @@
 import React, {Component} from 'react'
 
-class RestaurantListing extends Component{
+const RestaurantListing = ({venue}) => {
 
- render() {
- 	console.log(this.props.foursquareData)
+
     return (
     	<div className="restaurant-item">
-        {this.venue.name}
+        {venue.venue.name}
        </div>
     );
-  }
 }
 
 export default RestaurantListing;
