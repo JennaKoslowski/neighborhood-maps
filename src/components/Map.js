@@ -55,7 +55,6 @@ render () {
 return (
 <div>
  <div id="map"></div> 
- 
   
 </div>
 	)
