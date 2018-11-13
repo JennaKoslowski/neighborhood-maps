@@ -34,9 +34,11 @@ input.search-text{
   padding: 20px, 10px,;
 }
 
-.restaurant.item {
-width: inherit;
+.restaurant-item {
+margin: auto;
+width: 90%;
 height: inherit;
+font-size: 10px;
 }
 
 #map {

@@ -5,7 +5,8 @@ const RestaurantListing = ({venue}) => {
 
     return (
     	<div className="restaurant-item">
-        {venue.venue.name}
+        <h3>{venue.venue.name}</h3>
+        <p>{venue.venue.location.address}</p>
        </div>
     );
 }
