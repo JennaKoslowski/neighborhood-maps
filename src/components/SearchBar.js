@@ -59,6 +59,15 @@ class SearchBar extends Component{
                           </li>) 
                         } )} 
               	</ol> 
+
+              {/* if (e.target.value == 0){
+                         <Restaurants foursquareData={this.props.foursquareData}/>}
+            else {  
+                     
+                            <Restaurants searchResult= {this.state.searchResult}
+                           />
+                          
+            }*/}
             </div>
           </div>
         );
