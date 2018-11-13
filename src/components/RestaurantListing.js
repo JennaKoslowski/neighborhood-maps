@@ -3,10 +3,12 @@ import React, {Component} from 'react'
 class RestaurantListing extends Component{
 
  render() {
+ 	console.log(this.props.foursquareData.venues)
     return (
-    	<div class="restaurant-item">
-        {this.props.foursquareData.venue.name}
-       </div>
+    	
+    	<div>
+    	"hello"
+    	</div>
     );
   }
 }
