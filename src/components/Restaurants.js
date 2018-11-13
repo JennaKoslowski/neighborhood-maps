@@ -1,11 +1,8 @@
-import React, {Component} from 'react'
+import React from 'react'
 import RestaurantListing from './RestaurantListing'
 //import axios from 'axios'
 
 const Restaurants = ({foursquareData, ...props}) => {
-
-
-
   return (
 
     <div className="restaurant-info">

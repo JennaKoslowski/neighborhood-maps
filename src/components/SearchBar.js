@@ -33,7 +33,6 @@ class SearchBar extends Component{
   } search was a function they created in the BooksAPI file
 */ 
 	render() {
-    console.log(this.props.foursquareData)
        this.state.searchResults.filter(//.name- change to point to name of place
         (searchResult)=> {return searchResult.venue.name.indexOf(this.state.search) !==-1});
 		return (
@@ -44,21 +43,22 @@ class SearchBar extends Component{
                className="search-text"
                	type="text" //user enters text
                	placeholder="Search location"
-               	value={this.state.query} 
-               	onChange={(e) => this.updateSearch(e.target.query)} //not a function
+               	value={this.state.value} 
+               	onChange={(e) => this.updateSearch(e.target.value)} //not a function
                	/>
               </div>
             <div className="search-locations-results">
              <Restaurants foursquareData={this.props.foursquareData}/>
-              {/*<ol className="location-list">
+              <ol className="location-list">
               		{this.state.searchResults.map(searchResult => {
+                    console.log(searchResult)
                     return(
                           <li key={searchResult.name}> 
                             <Restaurants
                            />
                           </li>) 
                         } )} 
-              	</ol>*/}
+              	</ol> 
             </div>
           </div>
         );
