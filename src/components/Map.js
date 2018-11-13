@@ -28,7 +28,8 @@ componentWillReceiveProps = props => {
         animation: window.google.maps.Animation.DROP,
       });
       let infowindow = new window.google.maps.InfoWindow({
-      content: 'Hello'
+     content: location.venue.name,
+     
    });
       marker.addListener('click', function(){
         populateInfoWindow(this, infowindow);
@@ -77,8 +78,8 @@ function loadMap(url) { //help from Yahya Elharony
 function populateInfoWindow (marker, infowindow) {
   if (infowindow.marker !== marker){
     infowindow.marker = marker;
-    infowindow.setContent(<p> + marker.position.title + </p>);
-    infowindow.open(this.map, marker);
+    //infowindow.setContent(<p> + marker.position.title + </p>);
+    infowindow.open(infowindow, marker);
     infowindow.addListener('closeclick', function(){
     infowindow.setMarker(null);
     });
