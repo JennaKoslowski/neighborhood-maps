@@ -4,11 +4,13 @@ class RestaurantListing extends Component{
 
  render() {
  	console.log(this.props.foursquareData.venues)
+ 	
     return (
     	
     	<div>
     	"hello"
     	</div>
+
     );
   }
 }

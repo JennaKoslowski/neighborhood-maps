@@ -33,6 +33,7 @@ class SearchBar extends Component{
   } search was a function they created in the BooksAPI file
 */ 
 	render() {
+    console.log(this.state.foursquareData)
        this.state.searchResults.filter(//.name- change to point to name of place
         (searchResult)=> {return searchResult.venue.name.indexOf(this.state.search) !==-1});
 		return (

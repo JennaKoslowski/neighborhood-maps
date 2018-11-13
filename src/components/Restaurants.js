@@ -5,15 +5,14 @@ import RestaurantListing from './RestaurantListing'
 class Restaurants extends Component{
 
  render() {
-
-  return (
-
-    <div className="restaurant-info">
-  {this.props.foursquareData.map((venue) =>
-      <RestaurantListing {...this.props}/> )}
-     </div>
-      )
-  }
-}
-
+ 	return (
+ 	{this.props.foursquareData.map((venue) => { 
+ 		return (
+ 			<div class="restaurant-item">
+ 	        venue.name
+ 	       </div>
+ 	       );
+ 		} )
+ 	} )
+} }
 export default Restaurants;
