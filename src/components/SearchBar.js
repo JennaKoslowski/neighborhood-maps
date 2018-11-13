@@ -49,16 +49,17 @@ class SearchBar extends Component{
                	/>
               </div>
             <div className="search-locations-results">
-              <ol className="location-list">
+             <Restaurants  updateResults={this.props.updateResults}
+                           foursquareData={this.state.foursquareData}/>
+              {/*<ol className="location-list">
               		{this.state.searchResults.map(searchResult => {
                     return(
                           <li key={searchResult.name}> 
                             <Restaurants
-                         
                            />
                           </li>) 
                         } )} 
-              	</ol>
+              	</ol>*/}
             </div>
           </div>
         );

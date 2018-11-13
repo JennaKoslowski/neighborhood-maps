@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
 import Map from './components/Map'
-import Restaurants from './components/Restaurants'
+//import Restaurants from './components/Restaurants'
 import './App.css'
 import SearchBar from './components/SearchBar'
 import axios from 'axios'

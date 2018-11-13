@@ -5,13 +5,11 @@
   position: fixed;
   overflow: scroll;
   margin: auto;
-  display: flex;
-  flex: 1;
 }
 .search-locations{
   height: 100%;
   width: inherit;
-  background-color: black;
+  background-color: yellow;
   position: fixed;
   margin: auto;
 }
@@ -38,13 +36,11 @@ input.search-text{
 
 #map {
   height: 100vh;
-  width: 75%;
+  width: 66%;
   position: fixed;
-  display: flex;
-  z-index: -4;
-  flex: 2;
+  float: right;
 }
-.web-content {
+.App{
   display: flex;
   flex-flow: row nowrap;
 }

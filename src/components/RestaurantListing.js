@@ -6,7 +6,7 @@ class RestaurantListing extends Component{
     return (
     	<div class="restaurant-item">
         <h1> 
-          Hello
+          {/*{this.foursquareData.venue.name}*/}
         </h1>
        </div>
     );
