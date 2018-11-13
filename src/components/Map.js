@@ -6,12 +6,15 @@ class Map extends Component {
 state = {
 	map:null,
 	infowindow:null,
-	filteredMarkers:[]
+	filteredMarkers:[],
+  marker: []
 }
   
 componentWillMount() {
   this.renderMap()
 }
+
+
 componentWillReceiveProps = props => {
     const { foursquareData } = props;
     const filteredMarkers = [];
@@ -25,6 +28,12 @@ componentWillReceiveProps = props => {
         title: location.venue.name,
         animation: window.google.maps.Animation.DROP,
       });
+      let infowindow = new window.google.maps.InfoWindow({
+      content: 'Hello'
+   });
+      marker.addListener('click', function(){
+        populateInfoWindow(this, infowindow);
+      });
       filteredMarkers.push(marker);
     });
     this.setState(
@@ -33,11 +42,9 @@ componentWillReceiveProps = props => {
       },
       () => console.log(this.state)
     );
-   // let infowindow = new window.google.maps.InfoWindow({
-     // content: {location.venue.location.address}
-      //content: {location.venue.name}
-    //})
-  };
+  }
+
+
 
 initMap=()=> {
    let map= new window.google.maps.Map(document.getElementById('map'), {
@@ -68,6 +75,17 @@ function loadMap(url) { //help from Yahya Elharony
 	script.src = url
 	//script.async = true script.defer= true
 	index.parentNode.insertBefore(script,index)
+}
+
+function populateInfoWindow (marker, infowindow) {
+  if (infowindow.marker !== marker){
+    infowindow.marker = marker;
+    infowindow.setContent(<p> + marker.title + </p>);
+    infowindow.open(this.map, marker);
+    infowindow.addListener('closeclick', function(){
+      infowindow.setMarker(null);
+    });
+  }
 }
 
 export default Map;
