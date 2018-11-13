@@ -6,7 +6,6 @@ class SearchBar extends Component{
  state = {
  query: '',
  searchResults: [],
- filteredLocations: [],
  updateSearch: ''
 }
 //componentWillReceiveProps = props => {
@@ -49,8 +48,7 @@ class SearchBar extends Component{
                	/>
               </div>
             <div className="search-locations-results">
-             <Restaurants  updateResults={this.props.updateResults}
-                           foursquareData={this.state.foursquareData}/>
+             <Restaurants foursquareData={this.props.foursquareData}/>
               {/*<ol className="location-list">
               		{this.state.searchResults.map(searchResult => {
                     return(

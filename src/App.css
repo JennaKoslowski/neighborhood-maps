@@ -34,6 +34,11 @@ input.search-text{
   padding: 20px, 10px,;
 }
 
+.restaurant.item {
+width: inherit;
+height: inherit;
+}
+
 #map {
   height: 100vh;
   width: 66%;

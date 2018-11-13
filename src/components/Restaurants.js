@@ -10,7 +10,7 @@ class Restaurants extends Component{
 
     <div className="restaurant-info">
   
-      <RestaurantListing foursquareData={this.foursquareData}/>
+      <RestaurantListing {...this.props}/>
      </div>
       )
   }
