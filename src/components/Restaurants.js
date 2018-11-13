@@ -8,10 +8,10 @@ class Restaurants extends Component{
 
   return (
 
-    <div className="restaurant-info">
-  {this.props.foursquareData.map((venue) =>
-      <RestaurantListing {...this.props}/> )}
-     </div>
+    <ol className="restaurant-info">
+  {this.props.venues && this.props.venues.map((venue,idx) =>
+      <RestaurantListing key ={idx} {...venue}/> )}
+     </ol>
       )
   }
 }
