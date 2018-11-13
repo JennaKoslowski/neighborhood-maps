@@ -4,7 +4,7 @@ class RestaurantListing extends Component{
 
  render() {
     return (
-    	<div class="restaurant-item">
+    	<div className="restaurant-item">
         {this.props.foursquareData.venue.name}
        </div>
     );
