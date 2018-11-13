@@ -14,7 +14,6 @@ componentWillMount() {
   this.renderMap()
 }
 
-
 componentWillReceiveProps = props => {
     const { foursquareData } = props;
     const filteredMarkers = [];
@@ -43,8 +42,6 @@ componentWillReceiveProps = props => {
       () => console.log(this.state)
     );
   }
-
-
 
 initMap=()=> {
    let map= new window.google.maps.Map(document.getElementById('map'), {
@@ -80,10 +77,10 @@ function loadMap(url) { //help from Yahya Elharony
 function populateInfoWindow (marker, infowindow) {
   if (infowindow.marker !== marker){
     infowindow.marker = marker;
-    infowindow.setContent(<p> + marker.title + </p>);
+    infowindow.setContent(<p> + marker.position.title + </p>);
     infowindow.open(this.map, marker);
     infowindow.addListener('closeclick', function(){
-      infowindow.setMarker(null);
+    infowindow.setMarker(null);
     });
   }
 }
