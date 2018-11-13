@@ -9,7 +9,7 @@ class Restaurants extends Component{
  	{this.props.foursquareData.map((venue) => { 
  		return (
  			<div class="restaurant-item">
- 	        venue.name
+ 	        <h3>venue.name</h3>
  	       </div>
  	       );
  		} )

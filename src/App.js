@@ -36,7 +36,7 @@ componentDidMount() {
      console.log(res.data.response.groups[0].items)
     console.log({foursquareData})
   }).catch(error=> {
-    console.log("Error:" +error)
+    console.log("Error:" + error)
   }) 
 }
 
