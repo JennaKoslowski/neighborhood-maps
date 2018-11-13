@@ -22,6 +22,7 @@ componentWillReceiveProps = props => {
           location.venue.location.lng
         ),
         map: this.state.map,
+        title: location.venue.name,
         animation: window.google.maps.Animation.DROP,
       });
       filteredMarkers.push(marker);
