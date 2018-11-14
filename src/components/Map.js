@@ -82,7 +82,7 @@ function populateInfoWindow (marker, infowindow) {
     //infowindow.setContent(`${location.venue.name}`);
     infowindow.open(infowindow, marker);
     infowindow.addListener('closeclick', function(){
-      infowindow.setMarker(null);
+      infowindow.marker = null;
     });
   }
 }
