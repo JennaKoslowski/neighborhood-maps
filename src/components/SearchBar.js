@@ -17,13 +17,14 @@ searchVenues = () =>{
   return this.props.venues;
 };
 
-  handleChange = (e) => {
+  handleChange = e => {
+    this.setState({query: e.target.value})
     const matched = this.props.venue.name.toLowerCase().includes(this.state.query.toLowerCase());
     this.markers.forEach(marker=>{
         if (matched){
-               marker.isVisible= true }
+               marker.isVisible(true)}
         else {  
-               marker.isVisible= false
+               marker.isVisible(false)
       };
       this.setState({e : e});
   } )
@@ -40,7 +41,8 @@ searchVenues = () =>{
                className="search-text"
                	type="text" 
                	placeholder="Search location"
-               	onChange={this.handleChange}
+                aria-label="Search through site content"
+                onChange={this.props.handleChange}
                	/>
               </div>
             <div className="search-locations-results">
