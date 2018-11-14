@@ -28,7 +28,7 @@ componentWillReceiveProps = props => {
         animation: window.google.maps.Animation.DROP,
         icon: 'https://www.google.com/mapfiles/marker_green.png'
       });
-      let infowindow = new window.google.maps.InfoWindow({
+      let infowindow= new window.google.maps.InfoWindow({
      content: 'Visit ' +location.venue.name +' at '+ location.venue.location.address + ' today!',
       
    });
