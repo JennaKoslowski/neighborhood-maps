@@ -33,6 +33,7 @@ componentWillReceiveProps = props => {
    });
       marker.addListener('click', function(){
         populateInfoWindow(this, infowindow);
+        marker.setIcon('https://www.google.com/mapfiles/marker_green.png')
       });
       filteredMarkers.push(marker);
     });
@@ -81,7 +82,7 @@ function populateInfoWindow (marker, infowindow) {
     //infowindow.setContent(`${location.venue.name}`);
     infowindow.open(infowindow, marker);
     infowindow.addListener('closeclick', function(){
-    infowindow.setMarker(null);
+      infowindow.setMarker(null);
     });
   }
 }
