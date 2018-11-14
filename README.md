@@ -2,12 +2,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This project displays a selection of the top ten coffee shops in downtown Green Bay, WI and surrounding areas. Feel free to use the search feature to narrow them down faster and see which places you've already looked at by the changed color.
 
+The Service Worker only works in production mode. 
 Clone or download repository.
 cd into the current project
-open git and run: npm install 
-then run npm start
+open git and run: npm i
+then npm run build
 
-Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 This project is created with help from the following walkthroughs and people (some may be forgotten):

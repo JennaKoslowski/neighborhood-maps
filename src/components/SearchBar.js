@@ -14,7 +14,7 @@ class SearchBar extends Component{
                className="search-text"
                	type="text" 
                	placeholder="Search location"
-               	value={this.props.query} 
+               	value={this.props.newQuery} 
                	onChange={(e) => this.props.updateSearch(e.target.value)}
                	/>
               </div>
