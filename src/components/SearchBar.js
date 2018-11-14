@@ -10,13 +10,13 @@ class SearchBar extends Component{
   updateSearch: ''
   }
 //taken and modified from myReads project
-searchVenues = () =>{
-  if (this.state.query.trim() !== "") {
-    const venues = this.props.venues.filter(venue =>venue.name.toLowerCase().includes(this.state.query.toLowerCase()) )
-    return venues;
-  }
-  return this.props.venues;
-};
+//searchVenues = () =>{
+  //if (this.state.query.trim() !== "") {
+    //const venues = this.props.venues.filter(venue =>venue.name.toLowerCase().includes(this.state.query.toLowerCase()) )
+    //return venues;
+  //}
+  //return this.props.venues;
+//};
 
   handleChange = e => {
     this.setState({ query: e.target.value})
@@ -26,8 +26,7 @@ searchVenues = () =>{
                : 
                marker.isVisible = false
                return marker});
-    const allMark = this.props.markers;
-    this.props.updateSuperState({markers: Object.assign(allMark, markers)})
+    this.props.updateSuperState({markers})
 };
 
 	render() {
