@@ -28,8 +28,8 @@ componentWillReceiveProps = props => {
         animation: window.google.maps.Animation.DROP,
       });
       let infowindow = new window.google.maps.InfoWindow({
-     content: 'Visit ' +location.venue.name + ' at ' +
-        location.venue.location.address+'!'
+     content: 'Visit ' +location.venue.name +' at '+ location.venue.location.address + ' today!',
+     
    });
       marker.addListener('click', function(){
         populateInfoWindow(this, infowindow);
