@@ -5,6 +5,7 @@ class SearchBar extends Component{
 
   state= {
      query: '',
+     venues: [],
   searchResults: [],
   updateSearch: ''
   }
@@ -17,13 +18,16 @@ searchVenues = () =>{
   return this.props.venues;
 };
 
-  handleChange(query){
-    this.markers.forEach(marker=>{
-      marker.name.toLowerCase().includes(query.toLowerCase()) == true ?
-               marker.isVisible(true) 
+  handleChange = e => {
+    this.setState({ query: e.target.value})
+    const markers = this.props.foursquareData.map(marker=>{
+      marker.venue.name.toLowerCase().includes(e.target.value.toLowerCase()) == true ?
+               marker.isVisible = true 
                : 
-               marker.isVisible(false) });
-    this.setState({query: query})
+               marker.isVisible = false
+               return marker});
+    const allMark = this.props.markers;
+    this.props.updateSuperState({markers: Object.assign(allMark, markers)})
 };
 
 	render() {
@@ -33,16 +37,19 @@ searchVenues = () =>{
           <div className="search-locations">
               <div className="search-location-input-wrapper">
               {/*{JSON.stringify(this.state.query)}*/}
-               <input update state and value of input field
+               <input 
                className="search-text"
-               	type="text" 
+               	type="search" 
                	placeholder="Search location"
                 aria-label="Search through site content"
-                onChange={this.props.handleChange}
+                value= {this.state.query}
+                onChange={this.handleChange}
                	/>
               </div>
             <div className="search-locations-results">
-           
+            <div className="location-list">    
+               <Restaurants foursquareData={this.props.foursquareData}/>  
+                </div> 
 
             </div>
           </div>
