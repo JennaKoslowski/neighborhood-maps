@@ -7,25 +7,29 @@ class SearchBar extends Component{
      query: '',
      venues: [],
   searchResults: [],
-  updateSearch: ''
+  updateSearch: '',
+  markers: []
   }
 //taken and modified from myReads project
 searchVenues = () =>{
   if (this.state.query.trim() !== "") {
-    const venues = this.props.venues.filter(venue =>venue.name.toLowerCase().includes(this.state.query.toLowerCase()) )
+    const venues = this.props.foursquareData.filter(venue =>venue.name.toLowerCase().includes(this.state.query.toLowerCase()) )
     return venues;
   }
   return this.props.venues;
 };
 
   handleChange = e => {
-    this.setState({ query: e.target.value})
-    const markers = this.props.foursquareData.map(marker=>{
-      marker.venue.name.toLowerCase().includes(e.target.value.toLowerCase()) === true ?
-               marker.isVisible = true 
-               : 
-               marker.isVisible = false
-               return marker});
+    this.setState({ query: e.target.value});
+    const markers = this.props.foursquareData.map(venue=>{
+      console.log(venue);
+      const venueC =this.state.markers.find(marker => marker.id===venue.id )=== true;
+               if (venue.venue.name.toLowerCase().includes(e.target.value.toLowerCase())) {
+                venueC.isVisible = true 
+                }
+               else {
+                venueC.isVisible = false}
+               return venueC});
     this.props.updateSuperState({markers})
 };
 
@@ -35,10 +39,11 @@ searchVenues = () =>{
 		return (
           <div className="search-locations">
               <div className="search-location-input-wrapper">
-              {/*{JSON.stringify(this.state.query)}*/}
+              {JSON.stringify(this.state.query)}
                <input 
                className="search-text"
                	type="search" 
+                id= "search"
                	placeholder="Search location"
                 aria-label="Search through site content"
                 value= {this.state.query}
