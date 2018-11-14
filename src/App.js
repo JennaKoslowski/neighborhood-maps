@@ -45,11 +45,11 @@ componentDidMount() {
 }
 
   updateSearch(newQuery) {
-     this.markers.forEach(marker=>{
-        marker.venue.name.toLowerCase().includes(newQuery.toLowerCase()) == true ?
-          marker.setVisible(true) : marker.setVisible(false)
-      this.setState({query: newQuery});
-    })
+    // this.markers.forEach(marker=>{
+     //   marker.venue.name.toLowerCase().includes(newQuery.toLowerCase()) == true ?
+     //     marker.setVisible(true) : marker.setVisible(false)
+     // this.setState({query: newQuery});
+   // })
   };
 
   render() {
