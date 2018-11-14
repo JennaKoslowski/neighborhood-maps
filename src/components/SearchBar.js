@@ -21,7 +21,7 @@ searchVenues = () =>{
 
   handleChange = (e) => {
     this.setState({ query: e.target.value });
-    
+
     const markers = this.props.foursquareData.map(venue=>{
       console.log(venue);
       const venueC =this.state.markers.map(marker => marker.id==venue.id )=== true;
@@ -40,7 +40,7 @@ searchVenues = () =>{
 		return (
           <div className="search-locations">
               <div className="search-location-input-wrapper">
-              {JSON.stringify(this.state.query)}
+              {/*{JSON.stringify(this.state.query)}*/}
                <input 
                className="search-text"
                	type="search" 
