@@ -17,17 +17,13 @@ searchVenues = () =>{
   return this.props.venues;
 };
 
-  handleChange = e => {
-    this.setState({query: e.target.value})
-    const matched = this.props.venue.name.toLowerCase().includes(this.state.query.toLowerCase());
+  handleChange(query){
     this.markers.forEach(marker=>{
-        if (matched){
-               marker.isVisible(true)}
-        else {  
-               marker.isVisible(false)
-      };
-      this.setState({e : e});
-  } )
+      marker.name.toLowerCase().includes(query.toLowerCase()) == true ?
+               marker.isVisible(true) 
+               : 
+               marker.isVisible(false) });
+    this.setState({query: query})
 };
 
 	render() {
