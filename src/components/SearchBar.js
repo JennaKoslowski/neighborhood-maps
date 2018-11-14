@@ -21,7 +21,7 @@ searchVenues = () =>{
     const matched = this.props.venue.name.toLowerCase().includes(this.state.query.toLowerCase());
     this.markers.forEach(marker=>{
         if (matched){
-               marker.isVisible= true}
+               marker.isVisible= true }
         else {  
                marker.isVisible= false
       };
