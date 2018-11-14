@@ -12,7 +12,10 @@ state = {
 	createMarkers: [],
 	locations: [],
 	foursquareData:[],
-  marker:[]
+  marker:[],
+  query: '',
+  searchResults: [],
+  updateSearch: ''
 }
 
 componentDidMount() {
@@ -40,17 +43,15 @@ componentDidMount() {
     console.log("Error:" +error)
   }) 
 }
- 
-  updateSearch = (query) => {
+
+  updateSearch(newQuery) {
       this.markers.forEach(marker=>{
-        console.log(marker)
-            if (e.target.value == 0){
-               <Restaurants foursquareData={this.props.foursquareData}/>}
-            else {  
-               <Restaurants searchResult= {this.state.searchResult}/>
-      }
-      this.setState({query: query})
-    },
+        marker.venue.name.toLowerCase().includes(newQuery.toLowerCase()) == true ?
+          marker.setVisible(true) : marker.setVisible(false)
+      this.setState({query: newQuery});
+    })
+  };
+
   render() {
     return (
     	<main>
@@ -60,8 +61,10 @@ componentDidMount() {
       <SearchBar foursquareData={this.state.foursquareData} updateSearch={this.state.updateSearch}/>
       </div>
        <div id="map"> 
-      <Map marker={this.state.marker} foursquareData={this.state.foursquareData} role= "application" 
-       aria-label = "map" >
+      <Map {...this.state}
+        role= "application" 
+       aria-label = "map" 
+        >
      </Map>
      </div>
     </div>
