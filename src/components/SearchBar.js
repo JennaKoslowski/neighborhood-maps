@@ -19,18 +19,19 @@ searchVenues = () =>{
   return this.props.venues;
 };
 
-  handleChange = e => {
-    this.setState({ query: e.target.value});
+  handleChange = (e) => {
+    this.setState({ query: e.target.value });
+    
     const markers = this.props.foursquareData.map(venue=>{
       console.log(venue);
-      const venueC =this.state.markers.find(marker => marker.id===venue.id )=== true;
+      const venueC =this.state.markers.map(marker => marker.id==venue.id )=== true;
                if (venue.venue.name.toLowerCase().includes(e.target.value.toLowerCase())) {
-                venueC.isVisible = true 
+                venueC.isVisible = true; 
                 }
                else {
-                venueC.isVisible = false}
+                venueC.isVisible = false;}
                return venueC});
-    this.props.updateSuperState({markers})
+    this.props.updateSuperState({markers});
 };
 
 	render() {
