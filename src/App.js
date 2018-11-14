@@ -41,22 +41,23 @@ componentDidMount() {
   }) 
 }
  
- /*closeAllMarkers = () => {
-    const markers = this.state.markers.map(marker => {
-      marker.isOpen = false;
-      marker.clickedOnMarker = false;
-      return marker;
-    });
-    //resets the state of markers
-    this.setState({ markers: Object.assign(markers, markers) });
-  };*/
+  updateSearch = (query) => {
+      this.markers.forEach(marker=>{
+        console.log(marker)
+            if (e.target.value == 0){
+               <Restaurants foursquareData={this.props.foursquareData}/>}
+            else {  
+               <Restaurants searchResult= {this.state.searchResult}/>
+      }
+      this.setState({query: query})
+    },
   render() {
     return (
     	<main>
     	<h1>Coffee in Green Bay, WI</h1>
       <div className="web-content">
     	 <div id="search-local">
-      <SearchBar foursquareData={this.state.foursquareData}/>
+      <SearchBar foursquareData={this.state.foursquareData} updateSearch={this.state.updateSearch}/>
       </div>
        <div id="map"> 
       <Map marker={this.state.marker} foursquareData={this.state.foursquareData} role= "application" 
