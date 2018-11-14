@@ -12,6 +12,7 @@ state = {
 	createMarkers: [],
 	locations: [],
 	foursquareData:[],
+  marker:[]
 }
 
 componentDidMount() {
@@ -39,6 +40,7 @@ componentDidMount() {
     console.log("Error:" +error)
   }) 
 }
+ 
 
   render() {
     return (
@@ -49,7 +51,7 @@ componentDidMount() {
       <SearchBar foursquareData={this.state.foursquareData}/>
       </div>
        <div id="map"> 
-      <Map foursquareData={this.state.foursquareData} role= "application" 
+      <Map marker={this.state.marker} foursquareData={this.state.foursquareData} role= "application" 
        aria-label = "map" >
      </Map>
      </div>

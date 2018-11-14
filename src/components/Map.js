@@ -22,6 +22,7 @@ componentWillReceiveProps = props => {
     const filteredMarkers = [];
     foursquareData.forEach(location => {
       const marker = new window.google.maps.Marker({
+        isOpen : false,
         position: new window.google.maps.LatLng(
           location.venue.location.lat,
           location.venue.location.lng
@@ -35,10 +36,11 @@ componentWillReceiveProps = props => {
      content: 'Visit ' +location.venue.name +' at '+ location.venue.location.address + ' today!',
      
    });
+      
       marker.addListener('click', function(){
+        //infowindow.close();
         populateInfoWindow(this, infowindow);
         marker.setIcon('https://www.google.com/mapfiles/marker_yellow.png');
-
       });
       filteredMarkers.push(marker);
     });
@@ -84,11 +86,10 @@ function loadMap(url) { //help from Yahya Elharony
 function populateInfoWindow (marker, infowindow) {
   if (infowindow.marker !== marker){
     infowindow.marker = marker;
-    //infowindow.setContent(`${location.venue.name}`);
     infowindow.open(infowindow, marker);
     infowindow.addListener('closeclick', function(){
       infowindow.marker = null;
-       marker.setIcon('https://www.google.com/mapfiles/marker_green.png');
+      marker.setIcon('https://www.google.com/mapfiles/marker_green.png');
     });
   }
 }
