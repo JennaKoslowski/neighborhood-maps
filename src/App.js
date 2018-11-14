@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import Map from './components/Map'
 //import Restaurants from './components/Restaurants'
@@ -9,9 +8,9 @@ import axios from 'axios'
 class App extends Component {
 
 state = {
-	createMarkers: [],
-	locations: [],
-	foursquareData:[],
+  createMarkers: [],
+  locations: [],
+  foursquareData:[],
   marker:[],
   query: '',
   searchResults: [],
@@ -54,10 +53,10 @@ componentDidMount() {
 
   render() {
     return (
-    	<main>
-    	<h1>Coffee in Green Bay, WI</h1>
+      <main>
+      <h1>Coffee in Green Bay, WI</h1>
       <div className="web-content">
-    	 <div id="search-local">
+       <div id="search-local">
       <SearchBar foursquareData={this.state.foursquareData} updateSearch={this.state.updateSearch}/>
       </div>
        <div id="map"> 

@@ -3,6 +3,25 @@ import Restaurants from './Restaurants'
 
 class SearchBar extends Component{
 //taken and modified from myReads project
+searchVenues = () =>{
+  if (this.state.query.trim() !== "") {
+    const venues = this.props.venues.filter(venue => venue.name.toLowerCase().includes(this.state.query.toLowerCase()))
+    return venues;
+  }
+  return this.props.venues;
+};
+
+updateSearch=(query)=> {
+     this.markers.forEach(marker=>{
+        if (e.target.value == 0){
+               <Restaurants foursquareData={this.props.foursquareData}/> }
+        else {  
+               <Restaurants searchResult= {this.state.searchResult}/>
+      };
+      this.setState({query: query});
+    })
+  };
+
 	render() {
       // this.state.searchResults.filter(//.name- change to point to name of place
         //(searchResult)=> {return searchResult.venue.name.indexOf(this.state.search) !==-1});
@@ -10,11 +29,11 @@ class SearchBar extends Component{
           <div className="search-locations">
               <div className="search-location-input-wrapper">
               {/*{JSON.stringify(this.state.query)}*/}
-               <input //update state and value of input field
+               <input update state and value of input field
                className="search-text"
                	type="text" 
                	placeholder="Search location"
-               	value={this.props.newQuery} 
+               	value={this.props.Query} 
                	onChange={(e) => this.props.updateSearch(e.target.value)}
                	/>
               </div>
@@ -30,11 +49,7 @@ class SearchBar extends Component{
                         } )} */}
               	</ol> 
 
-            {/*if (e.target.value == 0){
-             //  <Restaurants foursquareData={this.props.foursquareData}/> }
-            //else {  
-              // <Restaurants searchResult= {this.state.searchResult}/>
-      //};*/}
+            {/**/}
             </div>
           </div>
         );
