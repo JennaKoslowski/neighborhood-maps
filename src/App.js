@@ -12,7 +12,7 @@ state = {
 	createMarkers: [],
 	locations: [],
 	foursquareData:[],
-  marker:[]
+  markers:[]
 }
 
 componentDidMount() {
@@ -41,7 +41,15 @@ componentDidMount() {
   }) 
 }
  
-
+ /*closeAllMarkers = () => {
+    const markers = this.state.markers.map(marker => {
+      marker.isOpen = false;
+      marker.clickedOnMarker = false;
+      return marker;
+    });
+    //resets the state of markers
+    this.setState({ markers: Object.assign(markers, markers) });
+  };*/
   render() {
     return (
     	<main>

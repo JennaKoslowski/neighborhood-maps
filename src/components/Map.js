@@ -9,7 +9,17 @@ state = {
 	filteredMarkers:[],
   marker: []
 }
-  
+
+closeAllMarkers = ()=>{
+const markers = this.state.markers.map(marker => {
+      marker.isOpen = false;
+      //marker.clickedOnMarker = false;
+      return marker;
+    });
+    //resets the state of markers
+    this.setState({ markers: Object.assign(markers, markers) });
+  };
+
 componentWillMount() {
   this.renderMap()
 }
@@ -22,7 +32,6 @@ componentWillReceiveProps = props => {
     const filteredMarkers = [];
     foursquareData.forEach(location => {
       const marker = new window.google.maps.Marker({
-        isOpen : false,
         position: new window.google.maps.LatLng(
           location.venue.location.lat,
           location.venue.location.lng
@@ -34,11 +43,9 @@ componentWillReceiveProps = props => {
       });
       let infowindow = new window.google.maps.InfoWindow({
      content: 'Visit ' +location.venue.name +' at '+ location.venue.location.address + ' today!',
-     
    });
-      
       marker.addListener('click', function(){
-        //infowindow.close();
+       this.closeAllMarkers();
         populateInfoWindow(this, infowindow);
         marker.setIcon('https://www.google.com/mapfiles/marker_yellow.png');
       });
@@ -84,7 +91,7 @@ function loadMap(url) { //help from Yahya Elharony
 }
 
 function populateInfoWindow (marker, infowindow) {
-  if (infowindow.marker !== marker){
+  if (infowindow.marker !== marker && infowindow.open !== 1){
     infowindow.marker = marker;
     infowindow.open(infowindow, marker);
     infowindow.addListener('closeclick', function(){
