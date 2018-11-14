@@ -13,7 +13,10 @@ state = {
 componentWillMount() {
   this.renderMap()
 }
-
+//handleClickOpen(){
+   //populateInfoWindow(this, infowindow);
+  // marker.setIcon('https://www.google.com/mapfiles/marker_green.png');
+//}
 componentWillReceiveProps = props => {
     const { foursquareData } = props;
     const filteredMarkers = [];
@@ -26,6 +29,7 @@ componentWillReceiveProps = props => {
         map: this.state.map,
         title: location.venue.name,
         animation: window.google.maps.Animation.DROP,
+        icon: 'https://www.google.com/mapfiles/marker_green.png'
       });
       let infowindow = new window.google.maps.InfoWindow({
      content: 'Visit ' +location.venue.name +' at '+ location.venue.location.address + ' today!',
@@ -33,7 +37,8 @@ componentWillReceiveProps = props => {
    });
       marker.addListener('click', function(){
         populateInfoWindow(this, infowindow);
-        marker.setIcon('https://www.google.com/mapfiles/marker_green.png')
+        marker.setIcon('https://www.google.com/mapfiles/marker_yellow.png');
+
       });
       filteredMarkers.push(marker);
     });
@@ -83,6 +88,7 @@ function populateInfoWindow (marker, infowindow) {
     infowindow.open(infowindow, marker);
     infowindow.addListener('closeclick', function(){
       infowindow.marker = null;
+       marker.setIcon('https://www.google.com/mapfiles/marker_green.png');
     });
   }
 }
