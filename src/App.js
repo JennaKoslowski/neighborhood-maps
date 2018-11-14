@@ -12,9 +12,6 @@ state = {
   locations: [],
   foursquareData:[],
   marker:[],
-  query: '',
-  searchResults: [],
-  updateSearch: ''
 }
 
 componentDidMount() {
