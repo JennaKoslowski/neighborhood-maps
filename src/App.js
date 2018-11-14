@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import Map from './components/Map'
 //import Restaurants from './components/Restaurants'
@@ -9,10 +8,11 @@ import axios from 'axios'
 class App extends Component {
 
 state = {
-	createMarkers: [],
-	locations: [],
-	foursquareData:[],
-  marker:[]
+  createMarkers: [],
+  locations: [],
+  foursquareData:[],
+  marker:[],
+  updateSuperState: obj => {this.setState(obj);}
 }
 
 componentDidMount() {
@@ -40,27 +40,20 @@ componentDidMount() {
     console.log("Error:" +error)
   }) 
 }
- 
- /*closeAllMarkers = () => {
-    const markers = this.state.markers.map(marker => {
-      marker.isOpen = false;
-      marker.clickedOnMarker = false;
-      return marker;
-    });
-    //resets the state of markers
-    this.setState({ markers: Object.assign(markers, markers) });
-  };*/
+
   render() {
     return (
-    	<main>
-    	<h1>Coffee in Green Bay, WI</h1>
+      <main>
+      <h1>Coffee in Green Bay, WI</h1>
       <div className="web-content">
-    	 <div id="search-local">
-      <SearchBar foursquareData={this.state.foursquareData}/>
+       <div id="search-local">
+      <SearchBar updateSuperState= {this.state.updateSuperState} foursquareData={this.state.foursquareData}/>
       </div>
        <div id="map"> 
-      <Map marker={this.state.marker} foursquareData={this.state.foursquareData} role= "application" 
-       aria-label = "map" >
+      <Map {...this.state}
+        role= "application" 
+       aria-label = "map" 
+        >
      </Map>
      </div>
     </div>
