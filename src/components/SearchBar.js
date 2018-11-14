@@ -8,30 +8,23 @@ class SearchBar extends Component{
  searchResults: [],
  updateSearch: ''
 }
-//componentWillReceiveProps = props => {
-  //  console.log(props);
-    //const searchResults = props; 
-  //};
+componentWillReceiveProps = props => {
+    console.log(props);
+    const searchResults = props; 
+  };
 
 	updateSearch = (query) => {
 	  	this.setState({query: query})
-	  	//this.updateSearched(query);
+	  	
 	  }
 
-   /*updateSearched = (query) => {
-    if (query){
-            {foursquareData}.search(query).then(searchResults => // chage state of searchResults
-              {
-            if(searchResults.error){ //this.state or no- check github if no results when typing/ backspace keep as array
-              this.setState({searchResults: []}) 
-            } else{
-              this.setState({searchResults:searchResults})
-            } } ) }
-    else {
-      this.setState({searchResults: []})
-    }
-  } search was a function they created in the BooksAPI file
-*/ 
+    //searchResultFunc(query){
+      //this.markers.forEach(marker=>{
+        //marker
+      //})
+      //this.setState({ query })
+    //}
+
 	render() {
        this.state.searchResults.filter(//.name- change to point to name of place
         (searchResult)=> {return searchResult.venue.name.indexOf(this.state.search) !==-1});
