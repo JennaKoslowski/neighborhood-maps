@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project displays a selection of the top ten coffee shops in downtgiown Green Bay, WI and surrounding areas. Feel free to use the search feature to narrow them down faster.
+This project displays a selection of the top ten coffee shops in downtown Green Bay, WI and surrounding areas. Feel free to use the search feature to narrow them down faster and see which places you've already looked at by the changed color.
 
 Clone or download repository.
 cd into the current project
