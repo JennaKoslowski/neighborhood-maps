@@ -15,6 +15,16 @@ state = {
   markers:[]
 }
 
+closeAllMarkers = ()=>{
+const markers = this.state.markers.map(marker => {
+      marker.isOpen = false;
+      //marker.clickedOnMarker = false;
+      return marker;
+    });
+    //resets the state of markers
+    this.setState({ markers: Object.assign(markers, markers) });
+  };
+
 componentDidMount() {
   this.renderFoursquare()
 }
@@ -59,7 +69,7 @@ componentDidMount() {
       <SearchBar foursquareData={this.state.foursquareData}/>
       </div>
        <div id="map"> 
-      <Map marker={this.state.marker} foursquareData={this.state.foursquareData} role= "application" 
+      <Map markers={this.state.markers} marker={this.state.marker} foursquareData={this.state.foursquareData} role= "application" 
        aria-label = "map" >
      </Map>
      </div>
