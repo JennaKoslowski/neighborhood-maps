@@ -7,7 +7,8 @@ state = {
 	map:null,
 	infowindow:null,
 	filteredMarkers:[],
-  markers: []
+  markers: [],
+  activeMarker: null
 }
 
 componentWillMount() {
@@ -17,7 +18,7 @@ componentWillReceiveProps = props => {
     const { foursquareData } = props;
     const filteredMarkers = [];
     foursquareData.forEach(location => {
-      const marker = new window.google.maps.Marker({
+      const marker = new google.maps.Marker({
         position: new window.google.maps.LatLng(
           location.venue.location.lat,
           location.venue.location.lng
@@ -28,42 +29,59 @@ componentWillReceiveProps = props => {
         animation: window.google.maps.Animation.DROP,
         icon: 'https://www.google.com/mapfiles/marker_green.png'
       });
-      let infowindow= new window.google.maps.InfoWindow({
-     content: 'Visit ' +location.venue.name +' at '+ location.venue.location.address + ' today!',
-      
-   });
-
-      marker.addListener('click', function(){
-        populateInfoWindow(this, infowindow);
+    marker.addListener('click', ()=>{
+        this.populateInfoWindow(marker);
         marker.setIcon('https://www.google.com/mapfiles/marker_yellow.png');
       });
       filteredMarkers.push(marker);
     });
     this.setState(
-      {
-        filteredMarkers
-      },
+      {filteredMarkers},
       () => console.log(this.state)
     );
+  };
+
+populateInfoWindow = marker => {
+  console.log(marker);
+         let {infowindow}= this.state;
+         let contentStr; 
+         this.props.foursquareData.forEach(venue =>{
+          console.log(venue);
+          if (marker.title === venue.venue.name) {console.log("Match");
+           contentStr = `Visit ${venue.venue.name} at ${
+          venue.venue.location.address
+        } today!`;
+      }
+    });
+    infowindow.setContent(contentStr);
+    google.maps.event.addListener(this.state.map, "click", () => {
+      this.state.infoWindow.close();
+    });
+
+  if (infowindow.marker !== marker && infowindow.open !== 1){
+    infowindow.marker = marker;
+    infowindow.open(infowindow, marker);
   }
+}
 
 initMap=()=> {
    let map= new window.google.maps.Map(document.getElementById('map'), {
    center: {lat: 44.519159, lng: -88.019826}, 
    zoom: 12
-	});  
-    this.setState({map});
-  }
+	}); 
+    let infowindow = new window.google.maps.InfoWindow({}); 
+    this.setState({map, infowindow});
+  };
 
 renderMap=()=>{
 	loadMap("https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyC5-0uFUUOwNG8qyC82A6zUbfD619EbDUw&callback=initMap")
 	window.initMap = this.initMap
-}
+};
 render () {
 
 return (
 <div>
- <div id="map"></div> 
+ <div id="map"/>
   
 </div>
 	)
@@ -76,17 +94,6 @@ function loadMap(url) { //help from Yahya Elharony
 	script.src = url
 	//script.async = true script.defer= true
 	index.parentNode.insertBefore(script,index)
-}
-
-function populateInfoWindow (marker, infowindow) {
-  if (infowindow.marker !== marker && infowindow.open !== 1){
-    infowindow.marker = marker;
-    infowindow.open(infowindow, marker);
-    infowindow.addListener('closeclick', function(){
-      infowindow.marker = null;
-      marker.setIcon('https://www.google.com/mapfiles/marker_green.png');
-    });
-  }
 }
 
 export default Map;
