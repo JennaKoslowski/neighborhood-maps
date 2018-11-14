@@ -10,18 +10,18 @@ class SearchBar extends Component{
   updateSearch: ''
   }
 //taken and modified from myReads project
-//searchVenues = () =>{
-  //if (this.state.query.trim() !== "") {
-    //const venues = this.props.venues.filter(venue =>venue.name.toLowerCase().includes(this.state.query.toLowerCase()) )
-    //return venues;
-  //}
-  //return this.props.venues;
-//};
+searchVenues = () =>{
+  if (this.state.query.trim() !== "") {
+    const venues = this.props.venues.filter(venue =>venue.name.toLowerCase().includes(this.state.query.toLowerCase()) )
+    return venues;
+  }
+  return this.props.venues;
+};
 
   handleChange = e => {
     this.setState({ query: e.target.value})
     const markers = this.props.foursquareData.map(marker=>{
-      marker.venue.name.toLowerCase().includes(e.target.value.toLowerCase()) == true ?
+      marker.venue.name.toLowerCase().includes(e.target.value.toLowerCase()) === true ?
                marker.isVisible = true 
                : 
                marker.isVisible = false
