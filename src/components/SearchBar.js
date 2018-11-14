@@ -13,7 +13,7 @@ searchVenues = () =>{
 
 updateSearch=(query)=> {
      this.markers.forEach(marker=>{
-        if (e.target.value == 0){
+        if (this.props.query == 0){
                <Restaurants foursquareData={this.props.foursquareData}/> }
         else {  
                <Restaurants searchResult= {this.state.searchResult}/>
@@ -33,8 +33,8 @@ updateSearch=(query)=> {
                className="search-text"
                	type="text" 
                	placeholder="Search location"
-               	value={this.props.Query} 
-               	onChange={(e) => this.props.updateSearch(e.target.value)}
+               	value={this.props.query} 
+               	onChange={e => this.props.updateSearch(e.target.value)}
                	/>
               </div>
             <div className="search-locations-results">
