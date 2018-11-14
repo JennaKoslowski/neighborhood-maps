@@ -34,7 +34,6 @@ componentWillReceiveProps = props => {
    });
 
       marker.addListener('click', function(){
-        this.closeAllMarkers();
         populateInfoWindow(this, infowindow);
         marker.setIcon('https://www.google.com/mapfiles/marker_yellow.png');
       });
