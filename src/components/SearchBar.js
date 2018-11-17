@@ -21,12 +21,11 @@ class SearchBar extends Component{
               {/*{JSON.stringify(this.state.query)}*/}
               
               </div>
-            <div className="search-locations-results">
+
             <div className="location-list">    
               
             </div> 
 
-            </div>
           </div>
         );
 	}
