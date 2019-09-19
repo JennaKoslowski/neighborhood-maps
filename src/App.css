@@ -59,7 +59,7 @@ font-size: 10px;
   position: fixed;
   float: right;
 }
-
+/*
 @media only screen and (max-width: 435px) {
   .App{
     display:flex;
@@ -122,4 +122,4 @@ position:relative;
  position:relative;
 }
 
-}
+}*/

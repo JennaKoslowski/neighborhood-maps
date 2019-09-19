@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Restaurants from './Restaurants'
+//import Restaurants from './Restaurants'
 
 class SearchBar extends Component{
 
