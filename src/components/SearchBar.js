@@ -17,10 +17,7 @@ class SearchBar extends Component{
         
 		return (
           <div className="search-locations">
-              <div className="search-location-input-wrapper">
-              {/*{JSON.stringify(this.state.query)}*/}
-              
-              </div>
+              <input className="search-location-input-wrapper" style= {{backgroundColor: 'white'}} type="text" />
 
             <div className="location-list">    
               
