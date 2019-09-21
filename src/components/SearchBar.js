@@ -11,9 +11,7 @@ class SearchBar extends Component{
     markers: []
   }
 
-
 	render() {
-      
         
 		return (
           <div className="search-locations">

@@ -46,16 +46,11 @@ componentDidMount() {
       <main>
       <h1>Coffee in Green Bay, WI</h1>
       <div className="web-content">
-       <div id="search-local">
       <SearchBar updateSuperState= {this.state.updateSuperState} foursquareData={this.state.foursquareData}/>
-      </div>
-       <div id="map"> 
-      <Map {...this.state}
+      <div><Map {...this.state}
         role= "application" 
        aria-label = "map" 
-        >
-     </Map>
-     </div>
+        /></div>
     </div>
       </main>
     );

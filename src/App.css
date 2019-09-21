@@ -13,27 +13,20 @@ h1 {
   text-align: center;
 }
 
-#search-local{
-  height: 100%;
-  width: 33%;
-  background-color: black;
-  position: fixed;
-  overflow: scroll;
-  margin: auto;
-  background-color: yellow;
+.web-content {
+  display:grid;
+  grid-template-columns: 1fr 3fr;
 }
+
 .search-locations{
   height: 100%;
   width: inherit;
   background-color: yellow;
-  position: fixed;
-  margin: auto;
 }
 .search-location-input-wrapper {
   height: 24px;
   width: 90%;
   margin-top: 20px;
-  
 }
 input.search-text{
   height: 10%;
@@ -61,12 +54,9 @@ font-size: 10px;
 
 #map {
   height: 100vh;
-  width: 66%;
-  position: fixed;
-  float: right;
 }
-/*
-@media only screen and (max-width: 435px) {
+
+/*@media only screen and (max-width: 435px) {
   .App{
     display:flex;
     flex-flow: column;
