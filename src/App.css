@@ -26,7 +26,7 @@ h1 {
 .search-location-input-wrapper {
   height: 24px;
   width: 90%;
-  margin-top: 20px;
+  margin: 15px;
 }
 input.search-text{
   height: 10%;
