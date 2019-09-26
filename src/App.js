@@ -32,10 +32,8 @@ componentDidMount() {
   }
   axios.get(endpoint + new URLSearchParams(foursquareInfo))
   .then(res => {
-    const foursquareData = res.data.response.groups[0].items
+   // const foursquareData = res.data.response.groups[0].items
     this.setState({foursquareData: res.data.response.groups[0].items});
-     console.log(res.data.response.groups[0].items)
-    console.log({foursquareData})
   }).catch(error=> {
     console.log("Error:" +error)
   }) 

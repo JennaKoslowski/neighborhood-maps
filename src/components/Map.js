@@ -37,17 +37,14 @@ componentWillReceiveProps = props => {
     });
     this.setState(
       {filteredMarkers},
-      () => console.log(this.state)
     );
   };
 
 populateInfoWindow = marker => {
-  console.log(marker);
          let {infowindow}= this.state;
          let contentStr; 
          this.props.foursquareData.forEach(venue =>{
-          console.log(venue);
-          if (marker.title === venue.venue.name) {console.log("Match");
+          if (marker.title === venue.venue.name) {
            contentStr = `Visit ${venue.venue.name} at ${
           venue.venue.location.address
         } today!`;

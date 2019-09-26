@@ -4,8 +4,8 @@ import React, {Component} from 'react'
 class SearchBar extends Component{
 
   state= {
-     query: '',
-     venues: [],
+    query: '',
+    venues: [],
     searchResults: [],
     updateSearch: '',
     markers: []
