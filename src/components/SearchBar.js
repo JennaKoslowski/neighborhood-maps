@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-//import Restaurants from './Restaurants'
+import Restaurants from './Restaurants';
 
 class SearchBar extends Component{
 
@@ -18,7 +18,7 @@ class SearchBar extends Component{
               <input className="search-location-input-wrapper" style= {{backgroundColor: 'white'}} type="text" />
 
             <div className="location-list">    
-              
+              <Restaurants foursquareData={this.state.foursquareData}/>
             </div> 
 
           </div>
