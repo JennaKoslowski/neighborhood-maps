@@ -35,14 +35,15 @@ input.search-text{
 }
 
 .location-list {
-  height: 90%;
+  height: 100%;
+  width: 100%;
+  margin: 5%;
 }
 
 .restaurant-info {
   width: 100%;
-  height: 50px;
+  height: auto;
   margin: auto;
-  padding: 20px, 10px,;
 }
 
 .restaurant-item {
