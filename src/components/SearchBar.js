@@ -15,7 +15,7 @@ class SearchBar extends Component{
         
 		return (
           <div className="search-locations">
-              <input className="search-location-input-wrapper" style= {{backgroundColor: 'white'}} type="text" />
+              <input className="search-location-input-wrapper" style= {{backgroundColor: 'white'}} type="text" placeholder ="Search coffee shops here"/>
 
             <div className="location-list">    
             <Restaurants foursquareData={this.props.foursquareData}/>
