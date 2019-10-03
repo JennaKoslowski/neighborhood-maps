@@ -5,6 +5,7 @@ import './App.css'
 import SearchBar from './components/SearchBar'
 import axios from 'axios'
 
+
 class App extends Component {
 
 state = {
@@ -38,6 +39,27 @@ componentDidMount() {
     console.log("Error:" +error)
   }) 
 }
+
+updateSearch = (query) => {
+  this.setState({query: query})
+  this.updateSearched(query);
+}
+
+updateSearched = (query) => {
+if (query){
+        axios.search(query).then((searchResults)=> // chage state of serachResults
+          {
+        if(searchResults.error){ //if no results when typing/ backspace keep as array
+          this.setState({searchResults: []}) 
+        } else{
+
+          this.setState({searchResults:searchResults})
+        } } )}
+else {
+  this.setState({searchResults: []})
+}
+}
+
 
   render() {
     return (

@@ -3,13 +3,13 @@ import Restaurants from './Restaurants';
 
 class SearchBar extends Component{
 
-  state= {
+  /*state= {
     query: '',
     venues: [],
     searchResults: [],
-    updateSearch: '',
-    markers: []
-  }
+    //updateSearch: '',
+    markers: [],
+  }*/
 
 	render() {
         
