@@ -13,6 +13,7 @@ state = {
   locations: [],
   foursquareData:[],
   marker:[],
+  searchResults:[],
   updateSuperState: obj => {this.setState(obj);}
 }
 
@@ -52,7 +53,6 @@ if (query){
         if(searchResults.error){ //if no results when typing/ backspace keep as array
           this.setState({searchResults: []}) 
         } else{
-
           this.setState({searchResults:searchResults})
         } } )}
 else {
@@ -60,13 +60,13 @@ else {
 }
 }
 
-
   render() {
     return (
       <main>
       <h1>Coffee in Green Bay, WI</h1>
       <div className="web-content">
-      <SearchBar updateSuperState= {this.state.updateSuperState} foursquareData={this.state.foursquareData}/>
+      <SearchBar updateSuperState= {this.state.updateSuperState} foursquareData={this.state.foursquareData} />
+      {/*pass down search results needed ^ */}
       <div><Map {...this.state}
         role= "application" 
        aria-label = "map" 
